@@ -144,19 +144,29 @@ const Nav = styled.nav`
   background-color: #fff;
   border-bottom: 1px solid #e5e5e5;
   z-index: 1000;
-  max-width: 1400px;
+
+  max-width: 800;
   margin: 0 auto;
+  padding: 0.75rem 15%;
+
+  @media (max-width: 768px) {
+    padding: 0.75rem 1.25rem;
+  }
 `;
 
 const NavGroup = styled.div`
-  margin-left: 15%;
   display: flex;
   align-items: center;
   gap: 0.25rem;
+  margin-left: 0;
+
+  @media (max-width: 768px) {
+    gap: 0.5rem;
+  }
 `;
 
 const NavEnd = styled.div`
-  margin-right: 15%;
+  margin-right: 0;
 `;
 
 const LogoWrapper = styled.div`
@@ -198,11 +208,21 @@ const HeroSection = styled.div`
   gap: 3rem;
   margin: 0 auto;
   max-width: 960px;
+  direction: rtl;
+
+  > * {
+    direction: ltr;
+  }
   
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    padding: 4rem 0 6rem;
+    padding: 4rem 1rem;
     text-align: center;
+    gap: 1rem;
+    direction: ltr;
+
+    display: flex;
+    flex-direction: column-reverse;
   }
 `;
 
@@ -268,6 +288,7 @@ const AnimationWrapper = styled.div`
   
   @media (max-width: 768px) {
     height: 280px;
+    margin-bottom: 2rem;
     
     canvas {
       max-width: 360px;
@@ -298,8 +319,9 @@ const GetStartedButton = styled(Button)`
   font-weight: 700;
   font-size: 1rem;
   border-radius: 10px;
-  margin: 0 auto 1rem;
+  margin: 0 auto;
   box-shadow: 0 4px 0 #DAA520;
+  white-space: nowrap;
   
   &:hover {
     transform: translateY(-1px);
@@ -309,6 +331,11 @@ const GetStartedButton = styled(Button)`
   &:active {
     transform: translateY(2px);
     box-shadow: 0 2px 0 #FDDA0D;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
   }
 `;
 
@@ -321,6 +348,11 @@ const NavButton = styled(GetStartedButton)`
   &:active {
     transform: translateY(1px);
     box-shadow: 0 2px 0 #FDDA0D;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
   }
 `;
 
@@ -377,9 +409,14 @@ const BenefitText = styled.p`
 
 const Footer = styled.footer`
   text-align: center;
-  padding: 3rem 0;
-  margin-top: 2rem;
+  padding: 2rem 0;
+  margin-top: 1rem;
   border-top: 1px solid #EEEEEE;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem 0;
+    margin-top: 0.5rem;
+  }
 `;
 
 const Copyright = styled.p`
@@ -392,7 +429,7 @@ const FeatureGrid = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  padding: 6rem 2rem;
+  padding: 4rem 2rem;
   align-items: center;
   max-width: 1080px;
   margin: 0 auto;
@@ -409,18 +446,25 @@ const FeatureGrid = styled.section`
     grid-template-columns: 1fr;
     text-align: center;
     gap: 2rem;
+    padding: 2.5rem 1rem;
     direction: ltr;
   }
 `;
 
 const FeatureImage = styled.div`
   border-radius: 16px;
-  padding: 2rem;
+  padding: 1.5rem;
   min-height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  
+  @media (max-width: 768px) {
+    min-height: auto;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
   
   img {
     max-width: 100%;
@@ -448,6 +492,11 @@ const FeatureTitle = styled.h2`
   background: linear-gradient(to right, #F6C356, #E5B347);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 const FeatureDescription = styled.p`
@@ -457,6 +506,11 @@ const FeatureDescription = styled.p`
   color: #999;
   max-width: 700px;
   margin: 0 auto;
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
 `;
 
 const CTASection = styled.section`
@@ -465,12 +519,21 @@ const CTASection = styled.section`
   background: #fff;
   margin: 0;
   position: relative;
+
+  @media (max-width: 768px) {
+    padding: 3rem 1rem;
+  }
 `;
 
 const CTAImageWrapper = styled.div`
   width: 140px;
-  margin: 0 auto;
+  margin: 0 auto 1.5rem;
   animation: float 3s ease-in-out infinite;
+  
+  @media (max-width: 768px) {
+    width: 100px;
+    margin-bottom: 1rem;
+  }
   
   img {
     width: 100%;
@@ -478,15 +541,9 @@ const CTAImageWrapper = styled.div`
   }
   
   @keyframes float {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
   }
 `;
 
@@ -496,6 +553,11 @@ const CTATitle = styled.h2`
   font-weight: 700;
   color: #333;
   margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
 `;
 
 export default App;
