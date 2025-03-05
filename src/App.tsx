@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useRive } from 'rive-react';
 import styled from '@emotion/styled';
 import { Layout, Fit, Alignment } from 'rive-react';
+import { SignUpModal } from './components/SignUpModal';
 
 function App() {
   const { RiveComponent } = useRive({
@@ -12,6 +13,10 @@ function App() {
     layout: new Layout({ fit: Fit.Contain, alignment: Alignment.Center }),
   });
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  const handleOpenModal = () => setIsModalOpen(true);
+
   return (
     <Container>
       <Nav>
@@ -20,7 +25,7 @@ function App() {
           <Logo>BravoBall</Logo>
         </NavGroup>
         <NavEnd>
-          <NavButton>Sign Up Now</NavButton>
+          <NavButton onClick={handleOpenModal}>Sign Up Now</NavButton>
         </NavEnd>
       </Nav>
 
@@ -29,8 +34,8 @@ function App() {
           <div>
             <MainHeading>Start Small. Dream Big.</MainHeading>
             <Subtitle>Personalized drills. Any place, any equipment, on-demand.</Subtitle>
-            <GetStartedButton>Sign Up Now</GetStartedButton>
-          </div>
+            <GetStartedButton onClick={handleOpenModal}>Sign Up Now</GetStartedButton>
+    </div>
           <AnimationWrapper>
             <RiveComponent />
           </AnimationWrapper>
@@ -101,13 +106,15 @@ function App() {
         <CTASection>
           <CTAImage src="/bravo-head.png" alt="Bravo" />
           <CTATitle>Ready to transform your game?</CTATitle>
-          <GetStartedButton>Sign Up Now</GetStartedButton>
+          <GetStartedButton onClick={handleOpenModal}>Sign Up Now</GetStartedButton>
         </CTASection>
 
         <Footer>
           <Copyright>© {new Date().getFullYear()} BravoBall. All rights reserved.</Copyright>
         </Footer>
       </MainContent>
+
+      <SignUpModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </Container>
   );
 }
