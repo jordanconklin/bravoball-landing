@@ -90,7 +90,9 @@ export const SignUpModal: React.FC<SignUpModalProps> = ({ isOpen, onClose }) => 
         ) : (
           <>
             <ModalHeader>
-              <BravoImage src="/bravo-head.png" alt="Bravo" />
+              <BravoImageWrapper>
+                <img src="/bravo-head.png" alt="Bravo" />
+              </BravoImageWrapper>
               <h2>Join the Waitlist</h2>
               <p>Be the first to know when BravoBall launches!</p>
             </ModalHeader>
@@ -153,10 +155,14 @@ const ModalHeader = styled.div`
   }
 `;
 
-const BravoImage = styled.img`
+const BravoImageWrapper = styled.div`
   width: 80px;
-  height: auto;
   margin: 0 auto;
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 const Input = styled.input`

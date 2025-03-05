@@ -21,7 +21,9 @@ function App() {
     <Container>
       <Nav>
         <NavGroup>
-          <LogoImage src="/bravo-head.png" alt="Bravo" />
+          <LogoWrapper>
+            <img src="/bravo-head.png" alt="Bravo" />
+          </LogoWrapper>
           <Logo>BravoBall</Logo>
         </NavGroup>
         <NavEnd>
@@ -104,7 +106,9 @@ function App() {
         </FeatureGrid>
 
         <CTASection>
-          <CTAImage src="/bravo-head.png" alt="Bravo" />
+          <CTAImageWrapper>
+            <img src="/bravo-head.png" alt="Bravo" />
+          </CTAImageWrapper>
           <CTATitle>Ready to transform your game?</CTATitle>
           <GetStartedButton onClick={handleOpenModal}>Sign Up Now</GetStartedButton>
         </CTASection>
@@ -155,10 +159,14 @@ const NavEnd = styled.div`
   margin-right: 15%;
 `;
 
-const LogoImage = styled.img`
+const LogoWrapper = styled.div`
   height: 40px;
-  width: auto;
   margin-top: 2px;
+  
+  img {
+    height: 100%;
+    width: auto;
+  }
 `;
 
 const Logo = styled.div`
@@ -459,10 +467,15 @@ const CTASection = styled.section`
   position: relative;
 `;
 
-const CTAImage = styled.img`
+const CTAImageWrapper = styled.div`
   width: 140px;
-  height: auto;
+  margin: 0 auto;
   animation: float 3s ease-in-out infinite;
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
   
   @keyframes float {
     0% {
