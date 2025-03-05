@@ -129,7 +129,9 @@ const Container = styled.div`
   color: #4b4b4b;
   font-family: 'Poppins', -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
-  padding: 0 24px;
+  padding: 0;
+  width: 100%;
+  position: relative;
 `;
 
 const Nav = styled.nav`
@@ -197,7 +199,8 @@ const SiteLanguage = styled.div`
 const MainContent = styled.main`
   max-width: 1080px;
   margin: 0 auto;
-  padding: 72px 48px 0;
+  padding: 72px 24px 0;
+  background-color: #fff;
 `;
 
 const HeroSection = styled.div`
