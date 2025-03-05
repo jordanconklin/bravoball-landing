@@ -28,7 +28,7 @@ function App() {
         <HeroSection>
           <div>
             <MainHeading>Start Small. Dream Big.</MainHeading>
-            <Subtitle>Personalized drills. Any space, any equipment, on-demand.</Subtitle>
+            <Subtitle>Personalized drills. Any place, any equipment, on-demand.</Subtitle>
             <GetStartedButton>Sign Up Now</GetStartedButton>
           </div>
           <AnimationWrapper>
@@ -99,6 +99,7 @@ function App() {
         </FeatureGrid>
 
         <CTASection>
+          <CTAImage src="/bravo-head.png" alt="Bravo" />
           <CTATitle>Ready to transform your game?</CTATitle>
           <GetStartedButton>Sign Up Now</GetStartedButton>
         </CTASection>
@@ -209,7 +210,7 @@ const HeroContent = styled.div`
 
 const MainHeading = styled.h1`
   font-size: 1.75rem;
-  font-weight: 650;
+  font-weight: 900;
   font-family: 'Poppins', sans-serif;
   color: #4b4b4b;
   margin-bottom: 0.75rem;
@@ -448,6 +449,25 @@ const CTASection = styled.section`
   padding: 8rem 2rem;
   background: #fff;
   margin: 0;
+  position: relative;
+`;
+
+const CTAImage = styled.img`
+  width: 140px;
+  height: auto;
+  animation: float 3s ease-in-out infinite;
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
 `;
 
 const CTATitle = styled.h2`
