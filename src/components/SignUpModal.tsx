@@ -128,6 +128,7 @@ const ModalOverlay = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  padding: 1rem;
 `;
 
 const ModalContent = styled.div`
@@ -138,6 +139,15 @@ const ModalContent = styled.div`
   max-width: 400px;
   position: relative;
   text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    width: 85%;
+    margin: auto;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
 `;
 
 const ModalHeader = styled.div`
@@ -172,10 +182,16 @@ const Input = styled.input`
   border-radius: 10px;
   margin-bottom: 1rem;
   font-size: 1rem;
+  box-sizing: border-box;
   
   &:focus {
     border-color: #F6C356;
     outline: none;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.875rem;
+    font-size: 16px;
   }
 `;
 
@@ -189,6 +205,7 @@ const SubmitButton = styled.button`
   cursor: pointer;
   width: 100%;
   font-size: 1rem;
+  margin-top: 0.5rem;
   
   &:hover {
     background: #E5B347;
@@ -197,6 +214,10 @@ const SubmitButton = styled.button`
   &:disabled {
     opacity: 0.7;
     cursor: not-allowed;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.875rem;
   }
 `;
 
