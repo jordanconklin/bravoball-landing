@@ -22,7 +22,7 @@ function App() {
       <Nav>
         <NavGroup>
           <LogoWrapper>
-            <img src="/bravo-head.png" alt="Bravo" />
+            <img src="/bravo_head.png" alt="Bravo" />
           </LogoWrapper>
           <Logo>BravoBall</Logo>
         </NavGroup>
@@ -107,7 +107,7 @@ function App() {
 
         <CTASection>
           <CTAImageWrapper>
-            <img src="/bravo-head.png" alt="Bravo" />
+            <img src="/bravo_head.png" alt="Bravo" />
           </CTAImageWrapper>
           <CTATitle>Ready to transform your game?</CTATitle>
           <GetStartedButton onClick={handleOpenModal}>Sign Up Now</GetStartedButton>
