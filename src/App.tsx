@@ -74,7 +74,7 @@ function App() {
             <FeatureTitle>Smart Session Generator</FeatureTitle>
             <FeatureDescription>
               Our AI analyzes your skill level and goals to create personalized training sessions. 
-              Get custom drills that adapt to your progress and available equipment.
+              Get custom drills that adapt to your progress and available equipment for the day.
             </FeatureDescription>
           </FeatureContent>
         </FeatureGrid>
