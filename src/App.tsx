@@ -34,8 +34,7 @@ function App() {
       <MainContent>
         <HeroSection>
           <div>
-            <MainHeading>Start Small. Dream Big.</MainHeading>
-            <Subtitle>Personalized drills. Any place, any equipment, on-demand.</Subtitle>
+            <MainHeading>Personalized drills. Any place, any equipment, on-demand.</MainHeading>
             <GetStartedButton onClick={handleOpenModal}>Sign Up Now</GetStartedButton>
     </div>
           <AnimationWrapper>
@@ -247,15 +246,16 @@ const HeroContent = styled.div`
 `;
 
 const MainHeading = styled.h1`
-  font-size: 1.75rem;
-  font-weight: 900;
+  font-size: 1.25rem;
+  font-weight: 700;
   font-family: 'Poppins', sans-serif;
   color: #4b4b4b;
-  margin-bottom: 0.75rem;
+  margin-bottom: 2rem;
   line-height: 1.2;
   text-align: center;
 `;
 
+// might use Subtitle later on
 const Subtitle = styled.p`
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
