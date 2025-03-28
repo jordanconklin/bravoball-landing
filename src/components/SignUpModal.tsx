@@ -160,7 +160,6 @@ const ModalContent = styled.div`
   max-width: 400px;
   position: relative;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 
   @media (max-width: 768px) {
     padding: 1.5rem;
@@ -172,7 +171,7 @@ const ModalContent = styled.div`
 `;
 
 const ModalHeader = styled.div`
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   
   h2 {
     color: #333;
@@ -187,9 +186,10 @@ const ModalHeader = styled.div`
 `;
 
 const BravoAnimationWrapper = styled.div`
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   margin: 0 auto 1rem;
+  margin-bottom: 30px;
   
   canvas {
     width: 100% !important;
@@ -284,5 +284,4 @@ const StandaloneWrapper = styled.div`
   border-radius: 20px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 `;

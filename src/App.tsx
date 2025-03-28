@@ -32,7 +32,8 @@ function App() {
                 <Logo>BravoBall</Logo>
               </NavGroup>
               <NavEnd>
-                <NavButton as={Link} to="/signup">Sign Up Now</NavButton>
+                <NavLink to="/">Home</NavLink>
+                <NavLink to="/signup">Sign Up</NavLink>
               </NavEnd>
             </Nav>
 
@@ -40,7 +41,7 @@ function App() {
               <HeroSection>
                 <div>
                   <MainHeading>Personalized drills. Any place, any equipment, on-demand.</MainHeading>
-                  <GetStartedButton as={Link} to="/signup">Sign Up Now</GetStartedButton>
+                  <GetStartedButton onClick={handleOpenModal}>Sign Up Now</GetStartedButton>
                 </div>
                 <AnimationWrapper>
                   <RiveComponent />
@@ -114,7 +115,7 @@ function App() {
                   <img src="/bravo_head.png" alt="Bravo" />
                 </CTAImageWrapper>
                 <CTATitle>Ready to transform your game?</CTATitle>
-                <GetStartedButton as={Link} to="/signup">Sign Up Now</GetStartedButton>
+                <GetStartedButton onClick={handleOpenModal}>Sign Up Now</GetStartedButton>
               </CTASection>
 
               <Footer>
@@ -175,6 +176,8 @@ const NavGroup = styled.div`
 `;
 
 const NavEnd = styled.div`
+  display: flex;
+  gap: 1rem;
   margin-right: 0;
 `;
 
@@ -219,6 +222,13 @@ const HeroSection = styled.div`
   margin: 0 auto;
   max-width: 960px;
   direction: rtl;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
   > * {
     direction: ltr;
@@ -376,6 +386,20 @@ const NavButton = styled(GetStartedButton)`
   @media (max-width: 768px) {
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
+  }
+`;
+
+const NavLink = styled(Link)`
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #4b4b4b;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #F6C356;
   }
 `;
 
