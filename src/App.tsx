@@ -32,8 +32,7 @@ function App() {
                 <Logo>BravoBall</Logo>
               </NavGroup>
               <NavEnd>
-                <NavHomeButton as={Link} to="/">Home</NavHomeButton>
-                <NavButton as={Link} to="/signup">Sign Up</NavButton>
+                <NavButton as={Link} to="/signup">Sign Up Now</NavButton>
               </NavEnd>
             </Nav>
 
@@ -41,7 +40,7 @@ function App() {
               <HeroSection>
                 <div>
                   <MainHeading>Personalized drills. Any place, any equipment, on-demand.</MainHeading>
-                  <GetStartedButton onClick={handleOpenModal}>Sign Up Now</GetStartedButton>
+                  <GetStartedButton as={Link} to="/signup">Sign Up Now</GetStartedButton>
                 </div>
                 <AnimationWrapper>
                   <RiveComponent />
@@ -115,7 +114,7 @@ function App() {
                   <img src="/bravo_head.png" alt="Bravo" />
                 </CTAImageWrapper>
                 <CTATitle>Ready to transform your game?</CTATitle>
-                <GetStartedButton onClick={handleOpenModal}>Sign Up Now</GetStartedButton>
+                <GetStartedButton as={Link} to="/signup">Sign Up Now</GetStartedButton>
               </CTASection>
 
               <Footer>
@@ -176,8 +175,6 @@ const NavGroup = styled.div`
 `;
 
 const NavEnd = styled.div`
-  display: flex;
-  gap: 1rem;
   margin-right: 0;
 `;
 
@@ -222,13 +219,6 @@ const HeroSection = styled.div`
   margin: 0 auto;
   max-width: 960px;
   direction: rtl;
-
-  > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
 
   > * {
     direction: ltr;
@@ -372,29 +362,20 @@ const GetStartedButton = styled(Button)`
   }
 `;
 
-const NavButton = styled.button<ButtonProps>`
-  background: none;
-  border: none;
-  padding: 0.5rem 1rem;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: #4b4b4b;
-  cursor: pointer;
-  transition: color 0.2s ease;
-  text-decoration: none;
+const NavButton = styled(GetStartedButton)`
+  padding: 0.6rem 1.25rem;
+  font-size: 0.875rem;
   margin: 0;
-
-  &:hover {
-    color: #F6C356;
-  }
-`;
-
-const NavHomeButton = styled(NavButton)`
-  color: #4b4b4b;
+  box-shadow: 0 3px 0 #DAA520;
   
-  &:hover {
-    color: #F6C356;
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 0 #FDDA0D;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
   }
 `;
 
