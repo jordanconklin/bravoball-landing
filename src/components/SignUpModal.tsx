@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { supabase } from '../lib/supabase';
+import { useRive } from 'rive-react';
+import { Layout, Fit, Alignment } from 'rive-react';
 
 interface SignUpModalProps {
   isOpen: boolean;
-  onClose: () => void;
+  onClose?: () => void;
+  standalone?: boolean;
 }
 
 const validateEmail = (email: string) => {
@@ -14,7 +17,15 @@ const validateEmail = (email: string) => {
 };
 
 // Signup modal component, allows users to sign up for the waitlist
-export const SignUpModal: React.FC<SignUpModalProps> = ({ isOpen, onClose }) => {
+export const SignUpModal: React.FC<SignUpModalProps> = ({ isOpen, onClose, standalone = false }) => {
+  const { RiveComponent } = useRive({
+    src: 'Bravo_Panting.riv',
+    autoplay: true,
+    stateMachines: 'Panting',
+    animations: 'Panting',
+    layout: new Layout({ fit: Fit.Contain, alignment: Alignment.Center }),
+  });
+
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -73,45 +84,55 @@ export const SignUpModal: React.FC<SignUpModalProps> = ({ isOpen, onClose }) => 
     }
   };
 
-  // If modal is not open, return null
-  if (!isOpen) return null;
+  // If modal is not open and not standalone, return null
+  if (!isOpen && !standalone) return null;
 
-  // Render modal content
+  const content = (
+    <>
+      {isSuccess ? (
+        <SuccessContent>
+          <h2>🎉 You're on the list!</h2>
+          <p>We'll notify you as soon as BravoBall launches.</p>
+        </SuccessContent>
+      ) : (
+        <>
+          <ModalHeader>
+            <BravoAnimationWrapper>
+              <RiveComponent />
+            </BravoAnimationWrapper>
+            <h2>Join the Waitlist</h2>
+            <p>Be the first to know when BravoBall launches!</p>
+          </ModalHeader>
+
+          <form onSubmit={handleSubmit}>
+            <Input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            {error && <ErrorMessage>{error}</ErrorMessage>}
+            <SubmitButton disabled={isSubmitting}>
+              {isSubmitting ? 'Signing up...' : 'Sign Up'}
+            </SubmitButton>
+          </form>
+        </>
+      )}
+    </>
+  );
+
+  // If standalone, render content directly
+  if (standalone) {
+    return <StandaloneWrapper>{content}</StandaloneWrapper>;
+  }
+
+  // Otherwise render in modal
   return (
     <ModalOverlay onClick={onClose}>
       <ModalContent onClick={e => e.stopPropagation()}>
         <CloseButton onClick={onClose}>&times;</CloseButton>
-        
-        {isSuccess ? (
-          <SuccessContent>
-            <h2>🎉 You're on the list!</h2>
-            <p>We'll notify you as soon as BravoBall launches.</p>
-          </SuccessContent>
-        ) : (
-          <>
-            <ModalHeader>
-              <BravoImageWrapper>
-                <img src="/bravo_head.png" alt="Bravo" />
-              </BravoImageWrapper>
-              <h2>Join the Waitlist</h2>
-              <p>Be the first to know when BravoBall launches!</p>
-            </ModalHeader>
-
-            <form onSubmit={handleSubmit}>
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              {error && <ErrorMessage>{error}</ErrorMessage>}
-              <SubmitButton disabled={isSubmitting}>
-                {isSubmitting ? 'Signing up...' : 'Sign Up'}
-              </SubmitButton>
-            </form>
-          </>
-        )}
+        {content}
       </ModalContent>
     </ModalOverlay>
   );
@@ -165,13 +186,14 @@ const ModalHeader = styled.div`
   }
 `;
 
-const BravoImageWrapper = styled.div`
-  width: 80px;
-  margin: 0 auto;
+const BravoAnimationWrapper = styled.div`
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem;
   
-  img {
-    width: 100%;
-    height: auto;
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
   }
 `;
 
@@ -254,4 +276,13 @@ const SuccessContent = styled.div`
   p {
     color: #666;
   }
-`; 
+`;
+
+const StandaloneWrapper = styled.div`
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+`;

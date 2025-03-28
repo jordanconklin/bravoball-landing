@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRive } from 'rive-react';
 import styled from '@emotion/styled';
 import { Layout, Fit, Alignment } from 'rive-react';
 import { SignUpModal } from './components/SignUpModal';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { SignUpPage } from './SignUp';
 
 function App() {
   const { RiveComponent } = useRive({
@@ -14,111 +16,118 @@ function App() {
   });
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  
   const handleOpenModal = () => setIsModalOpen(true);
 
   return (
-    <Container>
-      <Nav>
-        <NavGroup>
-          <LogoWrapper>
-            <img src="/bravo_head.png" alt="Bravo" />
-          </LogoWrapper>
-          <Logo>BravoBall</Logo>
-        </NavGroup>
-        <NavEnd>
-          <NavButton onClick={handleOpenModal}>Sign Up Now</NavButton>
-        </NavEnd>
-      </Nav>
+    <Router>
+      <Routes>
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/" element={
+          <Container>
+            <Nav>
+              <NavGroup>
+                <LogoWrapper>
+                  <img src="/bravo_head.png" alt="Bravo" />
+                </LogoWrapper>
+                <Logo>BravoBall</Logo>
+              </NavGroup>
+              <NavEnd>
+                <NavHomeButton as={Link} to="/">Home</NavHomeButton>
+                <NavButton as={Link} to="/signup">Sign Up</NavButton>
+              </NavEnd>
+            </Nav>
 
-      <MainContent>
-        <HeroSection>
-          <div>
-            <MainHeading>Personalized drills. Any place, any equipment, on-demand.</MainHeading>
-            <GetStartedButton onClick={handleOpenModal}>Sign Up Now</GetStartedButton>
-    </div>
-          <AnimationWrapper>
-            <RiveComponent />
-          </AnimationWrapper>
-        </HeroSection>
+            <MainContent>
+              <HeroSection>
+                <div>
+                  <MainHeading>Personalized drills. Any place, any equipment, on-demand.</MainHeading>
+                  <GetStartedButton onClick={handleOpenModal}>Sign Up Now</GetStartedButton>
+                </div>
+                <AnimationWrapper>
+                  <RiveComponent />
+                </AnimationWrapper>
+              </HeroSection>
 
-        <BenefitsSection>
-          <Benefit>
-            <BenefitIcon>🤖</BenefitIcon>
-            <BenefitTitle>AI-Powered Training</BenefitTitle>
-            <BenefitText>Personalized drills that adapt to your level</BenefitText>
-          </Benefit>
-          <Benefit>
-            <BenefitIcon>⚽️</BenefitIcon>
-            <BenefitTitle>Equipment Flexible</BenefitTitle>
-            <BenefitText>Train with whatever you have available</BenefitText>
-          </Benefit>
-          <Benefit>
-            <BenefitIcon>⚡️</BenefitIcon>
-            <BenefitTitle>60-Second Setup</BenefitTitle>
-            <BenefitText>Quick setup, more time for training</BenefitText>
-          </Benefit>
-          <Benefit>
-            <BenefitIcon>📈</BenefitIcon>
-            <BenefitTitle>Progress Tracking</BenefitTitle>
-            <BenefitText>Monitor your improvement over time</BenefitText>
-          </Benefit>
-        </BenefitsSection>
+              <BenefitsSection>
+                <Benefit>
+                  <BenefitIcon>🤖</BenefitIcon>
+                  <BenefitTitle>AI-Powered Training</BenefitTitle>
+                  <BenefitText>Personalized drills that adapt to your level</BenefitText>
+                </Benefit>
+                <Benefit>
+                  <BenefitIcon>⚽️</BenefitIcon>
+                  <BenefitTitle>Equipment Flexible</BenefitTitle>
+                  <BenefitText>Train with whatever you have available</BenefitText>
+                </Benefit>
+                <Benefit>
+                  <BenefitIcon>⚡️</BenefitIcon>
+                  <BenefitTitle>60-Second Setup</BenefitTitle>
+                  <BenefitText>Quick setup, more time for training</BenefitText>
+                </Benefit>
+                <Benefit>
+                  <BenefitIcon>📈</BenefitIcon>
+                  <BenefitTitle>Progress Tracking</BenefitTitle>
+                  <BenefitText>Monitor your improvement over time</BenefitText>
+                </Benefit>
+              </BenefitsSection>
 
-        <FeatureGrid>
-          <FeatureImage>
-            <img src="/bravoball_main.png" alt="Session Generator Interface" />
-          </FeatureImage>
-          <FeatureContent>
-            <FeatureTitle>Smart Session Generator</FeatureTitle>
-            <FeatureDescription>
-              Our AI analyzes your skill level and goals to create personalized training sessions. 
-              Get custom drills that adapt to your progress and available equipment for the day.
-            </FeatureDescription>
-          </FeatureContent>
-        </FeatureGrid>
+              <FeatureGrid>
+                <FeatureImage>
+                  <img src="/bravoball_main.png" alt="Session Generator Interface" />
+                </FeatureImage>
+                <FeatureContent>
+                  <FeatureTitle>Smart Session Generator</FeatureTitle>
+                  <FeatureDescription>
+                    Our AI analyzes your skill level and goals to create personalized training sessions. 
+                    Get custom drills that adapt to your progress and available equipment for the day.
+                  </FeatureDescription>
+                </FeatureContent>
+              </FeatureGrid>
 
-        <FeatureGrid>
-          <FeatureImage>
-            <img src="/bravoball_questions.png" alt="Drill Catalog Interface" />
-          </FeatureImage>
-          <FeatureContent>
-            <FeatureTitle>Personalized Setup</FeatureTitle>
-            <FeatureDescription>
-              Tell us about your goals, available equipment, and space. 
-              We'll create the perfect training plan just for you.
-            </FeatureDescription>
-          </FeatureContent>
-        </FeatureGrid>
+              <FeatureGrid>
+                <FeatureImage>
+                  <img src="/bravoball_questions.png" alt="Drill Catalog Interface" />
+                </FeatureImage>
+                <FeatureContent>
+                  <FeatureTitle>Personalized Setup</FeatureTitle>
+                  <FeatureDescription>
+                    Tell us about your goals, available equipment, and space. 
+                    We'll create the perfect training plan just for you.
+                  </FeatureDescription>
+                </FeatureContent>
+              </FeatureGrid>
 
-        <FeatureGrid>
-          <FeatureImage>
-            <img src="/bravoball_progress.png" alt="Progress Tracking Interface" />
-          </FeatureImage>
-          <FeatureContent>
-            <FeatureTitle>Track Your Progress</FeatureTitle>
-            <FeatureDescription>
-              Monitor your improvement over time with detailed progress tracking. 
-              See your skill development visualized and get insights on areas to focus on.
-            </FeatureDescription>
-          </FeatureContent>
-        </FeatureGrid>
+              <FeatureGrid>
+                <FeatureImage>
+                  <img src="/bravoball_progress.png" alt="Progress Tracking Interface" />
+                </FeatureImage>
+                <FeatureContent>
+                  <FeatureTitle>Track Your Progress</FeatureTitle>
+                  <FeatureDescription>
+                    Monitor your improvement over time with detailed progress tracking. 
+                    See your skill development visualized and get insights on areas to focus on.
+                  </FeatureDescription>
+                </FeatureContent>
+              </FeatureGrid>
 
-        <CTASection>
-          <CTAImageWrapper>
-            <img src="/bravo_head.png" alt="Bravo" />
-          </CTAImageWrapper>
-          <CTATitle>Ready to transform your game?</CTATitle>
-          <GetStartedButton onClick={handleOpenModal}>Sign Up Now</GetStartedButton>
-        </CTASection>
+              <CTASection>
+                <CTAImageWrapper>
+                  <img src="/bravo_head.png" alt="Bravo" />
+                </CTAImageWrapper>
+                <CTATitle>Ready to transform your game?</CTATitle>
+                <GetStartedButton onClick={handleOpenModal}>Sign Up Now</GetStartedButton>
+              </CTASection>
 
-        <Footer>
-          <Copyright>© {new Date().getFullYear()} BravoBall. All rights reserved.</Copyright>
-        </Footer>
-      </MainContent>
+              <Footer>
+                <Copyright>© {new Date().getFullYear()} BravoBall. All rights reserved.</Copyright>
+              </Footer>
+            </MainContent>
 
-      <SignUpModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-    </Container>
+            <SignUpModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+          </Container>
+        } />
+      </Routes>
+    </Router>
   );
 }
 
@@ -167,6 +176,8 @@ const NavGroup = styled.div`
 `;
 
 const NavEnd = styled.div`
+  display: flex;
+  gap: 1rem;
   margin-right: 0;
 `;
 
@@ -211,6 +222,13 @@ const HeroSection = styled.div`
   margin: 0 auto;
   max-width: 960px;
   direction: rtl;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
   > * {
     direction: ltr;
@@ -299,9 +317,14 @@ const AnimationWrapper = styled.div`
   }
 `;
 
-const Button = styled.button`
-  display: block;
-  width: 100%;
+interface ButtonProps {
+  as?: React.ElementType;
+  to?: string;
+}
+
+const Button = styled.button<ButtonProps>`
+  display: inline-block;
+  width: auto;
   padding: 1.2rem;
   border-radius: 12px;
   font-size: 1.1rem;
@@ -310,13 +333,13 @@ const Button = styled.button`
   cursor: pointer;
   transition: all 0.2s ease;
   text-transform: none;
+  text-decoration: none;
 `;
 
 const GetStartedButton = styled(Button)`
   background-color: #F6C356;
   color: #fff;
   border: none;
-  width: auto;
   padding: 0.875rem 1.75rem;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
@@ -325,10 +348,16 @@ const GetStartedButton = styled(Button)`
   margin: 0 auto;
   box-shadow: 0 4px 0 #DAA520;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
   
   &:hover {
     transform: translateY(-1px);
     background-color: #FDDA0D;
+    color: #fff;
+    text-decoration: none;
   }
   
   &:active {
@@ -339,23 +368,33 @@ const GetStartedButton = styled(Button)`
   @media (max-width: 768px) {
     padding: 0.75rem 1.5rem;
     font-size: 0.875rem;
+    min-width: 120px;
   }
 `;
 
-const NavButton = styled(GetStartedButton)`
-  padding: 0.6rem 1.25rem;
-  font-size: 0.875rem;
+const NavButton = styled.button<ButtonProps>`
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #4b4b4b;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  text-decoration: none;
   margin: 0;
-  box-shadow: 0 3px 0 #DAA520;
-  
-  &:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 0 #FDDA0D;
-  }
 
-  @media (max-width: 768px) {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
+  &:hover {
+    color: #F6C356;
+  }
+`;
+
+const NavHomeButton = styled(NavButton)`
+  color: #4b4b4b;
+  
+  &:hover {
+    color: #F6C356;
   }
 `;
 
@@ -428,6 +467,7 @@ const Copyright = styled.p`
   margin-top: 1rem;
 `;
 
+// *** FEATUREGRID SECTION ***
 const FeatureGrid = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
