@@ -1,22 +1,78 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useRive } from 'rive-react';
 import styled from '@emotion/styled';
 import { Layout, Fit, Alignment } from 'rive-react';
 import { SignUpModal } from './components/SignUpModal';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { SignUpPage } from './SignUp';
+import { FeatureSection } from './components/FeatureSection';
+import { BenefitCard } from './components/BenefitCard';
 
 function App() {
   const { RiveComponent } = useRive({
     src: 'Bravo_Panting.riv',
     autoplay: true,
-    stateMachines: 'Panting',
+    stateMachines: 'State Machine 1',
     animations: 'Panting',
     layout: new Layout({ fit: Fit.Contain, alignment: Alignment.Center }),
   });
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleOpenModal = () => setIsModalOpen(true);
+
+  const benefits = [
+    {
+      icon: '🤖',
+      title: 'AI-Powered Training',
+      description: 'Personalized drills that adapt to your level'
+    },
+    {
+      icon: '⚽️',
+      title: 'Equipment Flexible',
+      description: 'Train with whatever you have available'
+    },
+    {
+      icon: '⚡️',
+      title: '60-Second Setup',
+      description: 'Quick setup, more time for training'
+    },
+    {
+      icon: '📈',
+      title: 'Progress Tracking',
+      description: 'Monitor your improvement over time'
+    }
+  ];
+
+  const features = [
+    {
+      imageSrc: '/bravoball_main.png',
+      imageAlt: 'Session Generator Interface',
+      title: 'Smart Session Generator',
+      description: 'Our AI analyzes your skill level and goals to create personalized training sessions. Get custom drills that adapt to your progress and available equipment for the day.',
+      isReversed: false
+    },
+    {
+      imageSrc: '/bravoball_session.png',
+      imageAlt: 'Interactive Session Interface',
+      title: 'Interactive Training Sessions',
+      description: 'Follow along with guided sessions featuring drill videos and real-time timing. Watch demonstrations, time your drills, and track your performance as you train.',
+      isReversed: true
+    },
+    {
+      imageSrc: '/bravoball_questions.png',
+      imageAlt: 'Drill Catalog Interface',
+      title: 'Personalized Setup',
+      description: 'Tell us about your goals, available equipment, and space. We\'ll create the perfect training plan just for you.',
+      isReversed: false
+    },
+    {
+      imageSrc: '/bravoball_progress.png',
+      imageAlt: 'Progress Tracking Interface',
+      title: 'Track Your Progress',
+      description: 'Monitor your improvement over time with detailed progress tracking. See your skill development visualized and get insights on areas to focus on.',
+      isReversed: true
+    }
+  ];
 
   return (
     <Router>
@@ -49,66 +105,26 @@ function App() {
               </HeroSection>
 
               <BenefitsSection>
-                <Benefit>
-                  <BenefitIcon>🤖</BenefitIcon>
-                  <BenefitTitle>AI-Powered Training</BenefitTitle>
-                  <BenefitText>Personalized drills that adapt to your level</BenefitText>
-                </Benefit>
-                <Benefit>
-                  <BenefitIcon>⚽️</BenefitIcon>
-                  <BenefitTitle>Equipment Flexible</BenefitTitle>
-                  <BenefitText>Train with whatever you have available</BenefitText>
-                </Benefit>
-                <Benefit>
-                  <BenefitIcon>⚡️</BenefitIcon>
-                  <BenefitTitle>60-Second Setup</BenefitTitle>
-                  <BenefitText>Quick setup, more time for training</BenefitText>
-                </Benefit>
-                <Benefit>
-                  <BenefitIcon>📈</BenefitIcon>
-                  <BenefitTitle>Progress Tracking</BenefitTitle>
-                  <BenefitText>Monitor your improvement over time</BenefitText>
-                </Benefit>
+                {benefits.map((benefit, index) => (
+                  <BenefitCard
+                    key={index}
+                    icon={benefit.icon}
+                    title={benefit.title}
+                    description={benefit.description}
+                  />
+                ))}
               </BenefitsSection>
 
-              <FeatureGrid>
-                <FeatureImage>
-                  <img src="/bravoball_main.png" alt="Session Generator Interface" />
-                </FeatureImage>
-                <FeatureContent>
-                  <FeatureTitle>Smart Session Generator</FeatureTitle>
-                  <FeatureDescription>
-                    Our AI analyzes your skill level and goals to create personalized training sessions. 
-                    Get custom drills that adapt to your progress and available equipment for the day.
-                  </FeatureDescription>
-                </FeatureContent>
-              </FeatureGrid>
-
-              <FeatureGrid>
-                <FeatureImage>
-                  <img src="/bravoball_questions.png" alt="Drill Catalog Interface" />
-                </FeatureImage>
-                <FeatureContent>
-                  <FeatureTitle>Personalized Setup</FeatureTitle>
-                  <FeatureDescription>
-                    Tell us about your goals, available equipment, and space. 
-                    We'll create the perfect training plan just for you.
-                  </FeatureDescription>
-                </FeatureContent>
-              </FeatureGrid>
-
-              <FeatureGrid>
-                <FeatureImage>
-                  <img src="/bravoball_progress.png" alt="Progress Tracking Interface" />
-                </FeatureImage>
-                <FeatureContent>
-                  <FeatureTitle>Track Your Progress</FeatureTitle>
-                  <FeatureDescription>
-                    Monitor your improvement over time with detailed progress tracking. 
-                    See your skill development visualized and get insights on areas to focus on.
-                  </FeatureDescription>
-                </FeatureContent>
-              </FeatureGrid>
+              {features.map((feature, index) => (
+                <FeatureSection
+                  key={index}
+                  imageSrc={feature.imageSrc}
+                  imageAlt={feature.imageAlt}
+                  title={feature.title}
+                  description={feature.description}
+                  isReversed={feature.isReversed}
+                />
+              ))}
 
               <CTASection>
                 <CTAImageWrapper>
@@ -200,12 +216,6 @@ const Logo = styled.div`
   align-items: center;
 `;
 
-const SiteLanguage = styled.div`
-  color: #666;
-  font-size: 0.9rem;
-  font-weight: 500;
-`;
-
 const MainContent = styled.main`
   max-width: 1080px;
   margin: 0 auto;
@@ -246,23 +256,6 @@ const HeroSection = styled.div`
   }
 `;
 
-const ContentWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 4rem;
-  
-  @media (max-width: 768px) {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-  }
-`;
-
-const HeroContent = styled.div`
-  flex: 1;
-  max-width: 600px;
-`;
-
 const MainHeading = styled.h1`
   font-size: 1.25rem;
   font-weight: 700;
@@ -271,26 +264,6 @@ const MainHeading = styled.h1`
   margin-bottom: 2rem;
   line-height: 1.2;
   text-align: center;
-`;
-
-// might use Subtitle later on
-const Subtitle = styled.p`
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  color: #777;
-  margin-bottom: 1.5rem;
-  line-height: 1.5;
-  text-align: center;
-`;
-
-const TagLine = styled.div`
-  font-family: 'Poppins', sans-serif;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 800;
-  color: #333;
-  margin: 3rem 0;
 `;
 
 const AnimationWrapper = styled.div`
@@ -372,23 +345,6 @@ const GetStartedButton = styled(Button)`
   }
 `;
 
-const NavButton = styled(GetStartedButton)`
-  padding: 0.6rem 1.25rem;
-  font-size: 0.875rem;
-  margin: 0;
-  box-shadow: 0 3px 0 #DAA520;
-  
-  &:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 0 #FDDA0D;
-  }
-
-  @media (max-width: 768px) {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-  }
-`;
-
 const NavLink = styled(Link)`
   text-decoration: none;
   padding: 0.5rem 1rem;
@@ -421,39 +377,6 @@ const BenefitsSection = styled.div`
   }
 `;
 
-const Benefit = styled.div`
-  text-align: center;
-  padding: 1rem;
-  flex: 1;
-  max-width: 200px;
-  
-  &:hover {
-    transform: translateY(-4px);
-  }
-`;
-
-const BenefitIcon = styled.div`
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
-  color: #4b4b4b;
-`;
-
-const BenefitTitle = styled.h3`
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #4b4b4b;
-  margin-bottom: 0.5rem;
-`;
-
-const BenefitText = styled.p`
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.875rem;
-  font-weight: 400;
-  color: #777;
-  line-height: 1.4;
-`;
-
 const Footer = styled.footer`
   text-align: center;
   padding: 2rem 0;
@@ -470,95 +393,6 @@ const Copyright = styled.p`
   color: #999;
   font-size: 0.875rem;
   margin-top: 1rem;
-`;
-
-// *** FEATUREGRID SECTION ***
-const FeatureGrid = styled.section`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  padding: 4rem 2rem;
-  align-items: center;
-  max-width: 1080px;
-  margin: 0 auto;
-  
-  &:nth-of-type(even) {
-    direction: rtl;
-    
-    > * {
-      direction: ltr;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 2rem;
-    padding: 2.5rem 1rem;
-    direction: ltr;
-  }
-`;
-
-const FeatureImage = styled.div`
-  border-radius: 16px;
-  padding: 1.5rem;
-  min-height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  
-  @media (max-width: 768px) {
-    min-height: auto;
-    padding: 0.75rem;
-    margin-bottom: 1rem;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    
-    &:hover {
-      transform: scale(1.02);
-    }
-  }
-`;
-
-const FeatureContent = styled.div`
-  max-width: 440px;
-`;
-
-const FeatureTitle = styled.h2`
-  font-family: 'Potta One', cursive;
-  font-size: 2rem;
-  font-weight: 400;
-  color: #fff;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(to right, #F6C356, #E5B347);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-`;
-
-const FeatureDescription = styled.p`
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #999;
-  max-width: 700px;
-  margin: 0 auto;
-  
-  @media (max-width: 768px) {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
 `;
 
 const CTASection = styled.section`

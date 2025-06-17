@@ -21,7 +21,7 @@ export const SignUpModal: React.FC<SignUpModalProps> = ({ isOpen, onClose, stand
   const { RiveComponent } = useRive({
     src: 'Bravo_Panting.riv',
     autoplay: true,
-    stateMachines: 'Panting',
+    stateMachines: 'State Machine 1',
     animations: 'Panting',
     layout: new Layout({ fit: Fit.Contain, alignment: Alignment.Center }),
   });
