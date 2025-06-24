@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { SignUpPage } from './SignUp';
 import { FeatureSection } from './components/FeatureSection';
 import { BenefitCard } from './components/BenefitCard';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
 function App() {
   const { RiveComponent } = useRive({
@@ -76,73 +77,76 @@ function App() {
 
   return (
     <Router>
-      <Routes>
-        <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/" element={
-          <Container>
-            <Nav>
-              <NavGroup>
-                <LogoWrapper>
-                  <img src="/bravo_head.png" alt="Bravo" />
-                </LogoWrapper>
-                <Logo>BravoBall</Logo>
-              </NavGroup>
-              <NavEnd>
-                <NavLink to="/">Home</NavLink>
-                <NavLink to="/signup">Sign Up</NavLink>
-              </NavEnd>
-            </Nav>
+      <Container>
+        <Nav>
+          <NavGroup>
+            <LogoWrapper>
+              <img src="/bravo_head.png" alt="Bravo" />
+            </LogoWrapper>
+            <Logo>BravoBall</Logo>
+          </NavGroup>
+          <NavEnd>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/signup">Sign Up</NavLink>
+          </NavEnd>
+        </Nav>
+        <MainContent>
+          <Routes>
+            <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/" element={
+              <>
+                <HeroSection>
+                  <div>
+                    <MainHeading>Personalized drills. Any place, any equipment, on-demand.</MainHeading>
+                    <GetStartedButton onClick={handleOpenModal}>Sign Up Now</GetStartedButton>
+                  </div>
+                  <AnimationWrapper>
+                    <RiveComponent />
+                  </AnimationWrapper>
+                </HeroSection>
 
-            <MainContent>
-              <HeroSection>
-                <div>
-                  <MainHeading>Personalized drills. Any place, any equipment, on-demand.</MainHeading>
-                  <GetStartedButton onClick={handleOpenModal}>Sign Up Now</GetStartedButton>
-                </div>
-                <AnimationWrapper>
-                  <RiveComponent />
-                </AnimationWrapper>
-              </HeroSection>
+                <BenefitsSection>
+                  {benefits.map((benefit, index) => (
+                    <BenefitCard
+                      key={index}
+                      icon={benefit.icon}
+                      title={benefit.title}
+                      description={benefit.description}
+                    />
+                  ))}
+                </BenefitsSection>
 
-              <BenefitsSection>
-                {benefits.map((benefit, index) => (
-                  <BenefitCard
+                {features.map((feature, index) => (
+                  <FeatureSection
                     key={index}
-                    icon={benefit.icon}
-                    title={benefit.title}
-                    description={benefit.description}
+                    imageSrc={feature.imageSrc}
+                    imageAlt={feature.imageAlt}
+                    title={feature.title}
+                    description={feature.description}
+                    isReversed={feature.isReversed}
                   />
                 ))}
-              </BenefitsSection>
 
-              {features.map((feature, index) => (
-                <FeatureSection
-                  key={index}
-                  imageSrc={feature.imageSrc}
-                  imageAlt={feature.imageAlt}
-                  title={feature.title}
-                  description={feature.description}
-                  isReversed={feature.isReversed}
-                />
-              ))}
-
-              <CTASection>
-                <CTAImageWrapper>
-                  <img src="/bravo_head.png" alt="Bravo" />
-                </CTAImageWrapper>
-                <CTATitle>Ready to transform your game?</CTATitle>
-                <GetStartedButton onClick={handleOpenModal}>Sign Up Now</GetStartedButton>
-              </CTASection>
-
-              <Footer>
-                <Copyright>© {new Date().getFullYear()} BravoBall. All rights reserved.</Copyright>
-              </Footer>
-            </MainContent>
-
-            <SignUpModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-          </Container>
-        } />
-      </Routes>
+                <CTASection>
+                  <CTAImageWrapper>
+                    <img src="/bravo_head.png" alt="Bravo" />
+                  </CTAImageWrapper>
+                  <CTATitle>Ready to transform your game?</CTATitle>
+                  <GetStartedButton onClick={handleOpenModal}>Sign Up Now</GetStartedButton>
+                </CTASection>
+              </>
+            } />
+          </Routes>
+          <Footer>
+            <FooterLinks>
+              <FooterLink to="/privacy">Privacy Policy</FooterLink>
+            </FooterLinks>
+            <Copyright>© {new Date().getFullYear()} BravoBall. All rights reserved.</Copyright>
+          </Footer>
+        </MainContent>
+        <SignUpModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      </Container>
     </Router>
   );
 }
@@ -439,6 +443,24 @@ const CTATitle = styled.h2`
   @media (max-width: 768px) {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
+  }
+`;
+
+const FooterLinks = styled.div`
+  margin-bottom: 1rem;
+`;
+
+const FooterLink = styled(Link)`
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #4b4b4b;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #F6C356;
   }
 `;
 
