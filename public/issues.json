@@ -2,7 +2,7 @@
   "currentVersion": "1.0",
   "releaseDate": "2025-06-26",
   "note": "We're working hard to address these issues in the next update. Thank you for your feedback!",
-  "openIssues": [
+  "knownIssues": [
     {
         "title": "No email verification and forgot password",
         "description": "Currently, users cannot verify their email or reset their password. These features are planned for the next update.",
@@ -22,6 +22,11 @@
       "title": "Inaccurate drill/preference/streak data after login/logout",
       "description": "Sometimes, logging in or out shows incorrect drill, preference, or streak data. We're investigating and will improve data sync.",
       "status": "Investigating"
+    },
+    {
+      "title": "Players lose streak if they have a rest day",
+      "description": "Currently, taking a rest day causes players to lose their streak. We are planning to update the streak logic so rest days are accounted for.",
+      "status": "Planned"
     }
   ],
   "pastVersions": [

@@ -17,7 +17,7 @@ interface IssuesData {
   currentVersion: string;
   releaseDate: string;
   note?: string;
-  openIssues: Issue[];
+  knownIssues: Issue[];
   pastVersions: PastVersion[];
 }
 
@@ -140,8 +140,8 @@ const ReleaseNotes: React.FC = () => {
 
       <Section>
         <SectionTitle>Known Issues</SectionTitle>
-        {data.openIssues.length === 0 && <div>No known issues at this time.</div>}
-        {data.openIssues.map((issue, i) => (
+        {data.knownIssues.length === 0 && <div>No known issues at this time.</div>}
+        {data.knownIssues.map((issue, i) => (
           <IssueCard key={i}>
             <IssueTitle>
               {issue.title}
