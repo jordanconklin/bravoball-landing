@@ -106,7 +106,7 @@ function App() {
               <>
                 <HeroSection>
                   <div>
-                    <MainHeading>Personalized drills. Any place, any equipment, on-demand.</MainHeading>
+                    <MainHeading>Personalized drills. Any place, any equipment, on-demand!</MainHeading>
                     <GetStartedButton as="a" href="https://apps.apple.com/us/app/bravoball/id6746950846" target="_blank" rel="noopener noreferrer">Download Now</GetStartedButton>
                   </div>
                   <AnimationWrapper>
