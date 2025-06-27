@@ -8,6 +8,11 @@ import { SignUpPage } from './SignUp';
 import { FeatureSection } from './components/FeatureSection';
 import { BenefitCard } from './components/BenefitCard';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import ReleaseNotes from './components/ReleaseNotes';
+
+type ButtonProps =
+  | (React.ButtonHTMLAttributes<HTMLButtonElement> & { as?: 'button'; to?: string })
+  | (React.AnchorHTMLAttributes<HTMLAnchorElement> & { as: 'a'; href: string });
 
 function App() {
   const { RiveComponent } = useRive({
@@ -80,26 +85,29 @@ function App() {
       <Container>
         <Nav>
           <NavGroup>
-            <LogoWrapper>
-              <img src="/bravo_head.png" alt="Bravo" />
-            </LogoWrapper>
-            <Logo>BravoBall</Logo>
+            <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+              <LogoWrapper>
+                <img src="/bravo_head.png" alt="Bravo" />
+              </LogoWrapper>
+              <Logo>BravoBall</Logo>
+            </Link>
           </NavGroup>
           <NavEnd>
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/signup">Sign Up</NavLink>
+            <a href="https://apps.apple.com/us/app/bravoball/id6746950846" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', padding: '0.5rem 1rem', fontFamily: 'Poppins, sans-serif', fontWeight: 600, fontSize: '0.9rem', color: '#4b4b4b', transition: 'color 0.2s ease' }}>Download</a>
           </NavEnd>
         </Nav>
         <MainContent>
           <Routes>
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/issues" element={<ReleaseNotes />} />
             <Route path="/" element={
               <>
                 <HeroSection>
                   <div>
                     <MainHeading>Personalized drills. Any place, any equipment, on-demand.</MainHeading>
-                    <GetStartedButton onClick={handleOpenModal}>Sign Up Now</GetStartedButton>
+                    <GetStartedButton as="a" href="https://apps.apple.com/us/app/bravoball/id6746950846" target="_blank" rel="noopener noreferrer">Download Now</GetStartedButton>
                   </div>
                   <AnimationWrapper>
                     <RiveComponent />
@@ -133,7 +141,7 @@ function App() {
                     <img src="/bravo_head.png" alt="Bravo" />
                   </CTAImageWrapper>
                   <CTATitle>Ready to transform your game?</CTATitle>
-                  <GetStartedButton onClick={handleOpenModal}>Sign Up Now</GetStartedButton>
+                  <GetStartedButton as="a" href="https://apps.apple.com/us/app/bravoball/id6746950846" target="_blank" rel="noopener noreferrer">Download Now</GetStartedButton>
                 </CTASection>
               </>
             } />
@@ -141,11 +149,11 @@ function App() {
           <Footer>
             <FooterLinks>
               <FooterLink to="/privacy">Privacy Policy</FooterLink>
+              <FooterLink to="/issues">Known Issues</FooterLink>
             </FooterLinks>
             <Copyright>© {new Date().getFullYear()} BravoBall. All rights reserved.</Copyright>
           </Footer>
         </MainContent>
-        <SignUpModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </Container>
     </Router>
   );
@@ -293,11 +301,6 @@ const AnimationWrapper = styled.div`
     }
   }
 `;
-
-interface ButtonProps {
-  as?: React.ElementType;
-  to?: string;
-}
 
 const Button = styled.button<ButtonProps>`
   display: inline-block;

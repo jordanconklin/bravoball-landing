@@ -1,0 +1,36 @@
+{
+  "currentVersion": "1.0",
+  "releaseDate": "2025-06-26",
+  "note": "We're working hard to address these issues in the next update. Thank you for your feedback!",
+  "openIssues": [
+    {
+        "title": "No email verification and forgot password",
+        "description": "Currently, users cannot verify their email or reset their password. These features are planned for the next update.",
+        "status": "Fix coming in 1.1"
+    },
+    {
+      "title": "Closing the app logs users out",
+      "description": "Users are logged out when closing the app. We're working on persistent login for the next update.",
+      "status": "Fix coming in 1.1"
+    },
+    {
+        "title": "“Share with friends” link missing App Store link",
+        "description": "The share feature does not include the App Store link. This will be fixed in the next update.",
+        "status": "Fix coming in 1.1"
+    },
+    {
+      "title": "Inaccurate drill/preference/streak data after login/logout",
+      "description": "Sometimes, logging in or out shows incorrect drill, preference, or streak data. We're investigating and will improve data sync.",
+      "status": "Investigating"
+    }
+  ],
+  "pastVersions": [
+    {
+      "version": "1.0",
+      "date": "2025-06-26",
+      "notes": [
+        "Initial App Store release"
+      ]
+    }
+  ]
+} 
