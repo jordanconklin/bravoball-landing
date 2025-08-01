@@ -9,6 +9,7 @@ import { FeatureSection } from './components/FeatureSection';
 import { BenefitCard } from './components/BenefitCard';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import ReleaseNotes from './components/ReleaseNotes';
+import DeleteAccountInfo from './components/DeleteAccountInfo';
 
 type ButtonProps =
   | (React.ButtonHTMLAttributes<HTMLButtonElement> & { as?: 'button'; to?: string })
@@ -39,8 +40,8 @@ function App() {
     },
     {
       icon: '⚡️',
-      title: '60-Second Setup',
-      description: 'Quick setup, more time for training'
+      title: 'Follow-Along Training',
+      description: 'Video-guided drills with timing and instructions'
     },
     {
       icon: '📈',
@@ -102,6 +103,7 @@ function App() {
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/issues" element={<ReleaseNotes />} />
+            <Route path="/delete-account-info" element={<DeleteAccountInfo />} />
             <Route path="/" element={
               <>
                 <HeroSection>
@@ -150,6 +152,7 @@ function App() {
             <FooterLinks>
               <FooterLink to="/privacy">Privacy Policy</FooterLink>
               <FooterLink to="/issues">Known Issues</FooterLink>
+              <FooterLink to="/delete-account-info">Delete Account</FooterLink>
             </FooterLinks>
             <Copyright>© {new Date().getFullYear()} BravoBall. All rights reserved.</Copyright>
           </Footer>
