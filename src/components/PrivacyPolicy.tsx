@@ -7,7 +7,7 @@ interface PrivacySection {
   content: string;
 }
 
-interface PrivacyPolicy {
+interface PrivacyPolicyDocument {
   lastUpdated: string;
   sections: PrivacySection[];
 }
@@ -74,7 +74,7 @@ const ErrorWrapper = styled.div`
 `;
 
 const PrivacyPolicy: React.FC = () => {
-  const [privacyPolicy, setPrivacyPolicy] = useState<PrivacyPolicy | null>(null);
+  const [privacyPolicy, setPrivacyPolicy] = useState<PrivacyPolicyDocument | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
