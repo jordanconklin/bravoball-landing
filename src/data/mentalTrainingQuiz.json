@@ -21,7 +21,7 @@
     "pauseAt": 2.2,
     "position": "Central Midfielder",
     "difficulty": 2,
-    "question": "You're Pedri. A defender is closing fast and your teammates are anticipating a switch. What do you do?",
+    "question": "You're Pedri. A defender is closing fast with the play slowing down. What do you do?",
     "options": [
       { "id": "A", "text": "Play it wide left to Rashford on the wing" },
       { "id": "B", "text": "Play the ball back to player who just passed to him" },
@@ -37,7 +37,7 @@
     "pauseAt": 4.8,
     "position": "Central Midfielder",
     "difficulty": 2,
-    "question": "You're Pedri. A defender is on your back and your forward options are all covered. What do you do?",
+    "question": "You're Pedri. A defender is on your back and Betis is pressing high. What do you do?",
     "options": [
       { "id": "A", "text": "Half turn and try to play forward through the pressure" },
       { "id": "B", "text": "Take a touch and play it back to the keeper" },
@@ -67,10 +67,10 @@
   {
     "id": 5,
     "clipUrl": "https://bravoball-quiz-clips.s3.us-east-2.amazonaws.com/midfield/pedri-barcaVbetis-7.mp4",
-    "pauseAt": 3.35,
+    "pauseAt": 3.3,
     "position": "Central Midfielder",
     "difficulty": 3,
-    "question": "You're Pedri. You receive from Yamal with a defender on your back and Rashford running in behind. What do you do?",
+    "question": "You're Pedri. You receive from Yamal with a defender on your back. What do you do?",
     "options": [
       { "id": "A", "text": "Take a touch and half turn to play out" },
       { "id": "B", "text": "Play it first time back to Balde at left back" },

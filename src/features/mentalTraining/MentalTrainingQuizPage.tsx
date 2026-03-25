@@ -292,9 +292,7 @@ export default function MentalTrainingQuizPage() {
                 Then compare your read with the coaching explanation.
               </HeroCopy>
               <HeroMeta>
-                <MetaPill>20-question concept</MetaPill>
-                <MetaPill>Video-first quiz</MetaPill>
-                <MetaPill>No login required</MetaPill>
+                <MetaPill>5-question concept</MetaPill>
               </HeroMeta>
               <PrimaryButton onClick={handleStart}>Start Mental Training</PrimaryButton>
             </MotionCard>
