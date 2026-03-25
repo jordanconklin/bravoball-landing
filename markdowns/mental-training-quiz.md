@@ -120,28 +120,52 @@ Added submission layer:
 
 - `src/features/mentalTraining/api.ts`
 - `supabase/mental_training_quiz_schema.sql`
+- `supabase/migrations/20260325071134_create_mental_training_quiz_tables.sql`
+- `supabase/config.toml`
 
 Current submission design:
 
 - `mental_quiz_sessions`
 - `mental_quiz_answers`
 
-Required for live submissions:
+Submission behavior now implemented:
 
-- Apply `supabase/mental_training_quiz_schema.sql` in your Supabase SQL editor
-- Keep `REACT_APP_SUPABASE_URL` and `REACT_APP_SUPABASE_ANON_KEY` set in the frontend environment
-- No extra backend endpoint is required for quiz feedback submissions
+- The feedback form submits directly from the frontend to Supabase
+- A UUID is generated client-side for the quiz session record
+- Answer rows are inserted using that generated `session_id`
+- This avoids depending on a post-insert `select` round trip, which can be blocked by stricter RLS setups
 
-The feedback form is intended to submit:
+The feedback form currently submits:
 
 - name
 - email
 - score
+- total-questions
 - rating
 - would-use-feature
 - requested-more
 - review
 - answer-level records
+
+Database setup completed:
+
+- Created a tracked Supabase migration in `supabase/migrations/20260325071134_create_mental_training_quiz_tables.sql`
+- Linked the repo to the hosted Supabase project with the CLI
+- Pushed the migration to the remote database
+- Verified the tables exist remotely:
+  - `public.mental_quiz_sessions`
+  - `public.mental_quiz_answers`
+
+Still required for deployed environments:
+
+- Keep `REACT_APP_SUPABASE_URL` and `REACT_APP_SUPABASE_ANON_KEY` set in the frontend environment
+- No extra backend endpoint is required for quiz feedback submissions
+
+## Deployment note
+
+- The branch initially failed on Vercel because CI treated an existing ESLint warning as an error
+- The warning was in `src/components/PrivacyPolicy.tsx`, unrelated to the quiz feature itself
+- That lint issue was fixed so the branch can be deployed and merged without breaking the tracked Vercel landing site
 
 ## Main implementation files
 
