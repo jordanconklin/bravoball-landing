@@ -119,11 +119,18 @@ Supabase client already existed in the landing repo:
 Added submission layer:
 
 - `src/features/mentalTraining/api.ts`
+- `supabase/mental_training_quiz_schema.sql`
 
 Current submission design:
 
 - `mental_quiz_sessions`
 - `mental_quiz_answers`
+
+Required for live submissions:
+
+- Apply `supabase/mental_training_quiz_schema.sql` in your Supabase SQL editor
+- Keep `REACT_APP_SUPABASE_URL` and `REACT_APP_SUPABASE_ANON_KEY` set in the frontend environment
+- No extra backend endpoint is required for quiz feedback submissions
 
 The feedback form is intended to submit:
 

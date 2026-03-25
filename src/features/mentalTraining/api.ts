@@ -18,10 +18,13 @@ export async function submitQuizSession({
   totalQuestions,
   answers,
 }: SubmitQuizSessionParams) {
-  const { data: sessionRow, error: sessionError } = await supabase
+  const sessionId = crypto.randomUUID();
+
+  const { error: sessionError } = await supabase
     .from('mental_quiz_sessions')
     .insert([
       {
+        id: sessionId,
         name,
         email,
         score,
@@ -33,16 +36,14 @@ export async function submitQuizSession({
         completed_at: new Date().toISOString(),
         session_source: window.location.href,
       },
-    ])
-    .select('id')
-    .single();
+    ]);
 
   if (sessionError) {
     throw sessionError;
   }
 
   const answerRows = answers.map((answer) => ({
-    session_id: sessionRow.id,
+    session_id: sessionId,
     question_id: answer.questionId,
     selected_answer: answer.selectedAnswer,
     correct_answer: answer.correctAnswer,
@@ -52,11 +53,13 @@ export async function submitQuizSession({
     answered_at: answer.answeredAt,
   }));
 
-  const { error: answersError } = await supabase.from('mental_quiz_answers').insert(answerRows);
+  if (answerRows.length > 0) {
+    const { error: answersError } = await supabase.from('mental_quiz_answers').insert(answerRows);
 
-  if (answersError) {
-    throw answersError;
+    if (answersError) {
+      throw answersError;
+    }
   }
 
-  return sessionRow.id;
+  return sessionId;
 }
