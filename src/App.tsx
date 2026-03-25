@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useRive } from 'rive-react';
 import styled from '@emotion/styled';
 import { Layout, Fit, Alignment } from 'rive-react';
-import { SignUpModal } from './components/SignUpModal';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { SignUpPage } from './SignUp';
 import { FeatureSection } from './components/FeatureSection';
@@ -10,6 +9,7 @@ import { BenefitCard } from './components/BenefitCard';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import ReleaseNotes from './components/ReleaseNotes';
 import DeleteAccountInfo from './components/DeleteAccountInfo';
+import MentalTrainingQuizPage from './features/mentalTraining/MentalTrainingQuizPage';
 
 type ButtonProps =
   | (React.ButtonHTMLAttributes<HTMLButtonElement> & { as?: 'button'; to?: string })
@@ -23,9 +23,6 @@ function App() {
     animations: 'Panting',
     layout: new Layout({ fit: Fit.Contain, alignment: Alignment.Center }),
   });
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const handleOpenModal = () => setIsModalOpen(true);
 
   const benefits = [
     {
@@ -104,6 +101,7 @@ function App() {
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/issues" element={<ReleaseNotes />} />
             <Route path="/delete-account-info" element={<DeleteAccountInfo />} />
+            <Route path="/mental-training-demo" element={<MentalTrainingQuizPage />} />
             <Route path="/" element={
               <>
                 <HeroSection>

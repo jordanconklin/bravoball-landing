@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "clipUrl": "https://bravoball-quiz-clips.s3.us-east-2.amazonaws.com/midfield/pedri-barcaVbetis-1.mp4",
+    "pauseAt": 2.6,
+    "position": "Central Midfielder",
+    "difficulty": 1,
+    "question": "You're Pedri. Betis's #6 is pressing hard. What do you do?",
+    "options": [
+      { "id": "A", "text": "Play it back to the center back" },
+      { "id": "B", "text": "Turn and play into Rashford in the center circle" },
+      { "id": "C", "text": "Shield the ball and wait for support" },
+      { "id": "D", "text": "Play a one-time pass through the lines" }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Pedri's shoulder check before receiving tells him everything. Yamal is already making the run, and the #6's press shifts toward Rashford, closing that lane while opening the channel behind the line. The one-time pass finds Yamal before the defense can recover. Option A gives Betis time to reset, option B runs directly into the pressing lane, and option C lets the space disappear."
+  },
+  {
+    "id": 2,
+    "clipUrl": "https://bravoball-quiz-clips.s3.us-east-2.amazonaws.com/midfield/pedri-barcaVbetis-2.mp4",
+    "pauseAt": 2.2,
+    "position": "Central Midfielder",
+    "difficulty": 2,
+    "question": "You're Pedri. A defender is closing fast and your teammates are anticipating a switch. What do you do?",
+    "options": [
+      { "id": "A", "text": "Play it wide left to Rashford on the wing" },
+      { "id": "B", "text": "Play the ball back to player who just passed to him" },
+      { "id": "C", "text": "Cut back against the defender's momentum and play it to the right winger" },
+      { "id": "D", "text": "Carry the ball forward and drive into the space ahead" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Rashford wide left is still getting set and a defender is already eyeing that switch. The obvious ball is left, and the defense is leaning that way too. Pedri cuts back against that momentum instead, finds the right winger in space, and Yamal's run away from the play opens the lane. Option A is available but easy to read, option B is back into the pressure, and option D can be forced."
+  },
+  {
+    "id": 3,
+    "clipUrl": "https://bravoball-quiz-clips.s3.us-east-2.amazonaws.com/midfield/pedri-barcaVbetis-3.mp4",
+    "pauseAt": 4.8,
+    "position": "Central Midfielder",
+    "difficulty": 2,
+    "question": "You're Pedri. A defender is on your back and your forward options are all covered. What do you do?",
+    "options": [
+      { "id": "A", "text": "Half turn and try to play forward through the pressure" },
+      { "id": "B", "text": "Take a touch and play it back to the keeper" },
+      { "id": "C", "text": "Play into Cubarsi at right center back" },
+      { "id": "D", "text": "Half turn to play into the left back" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Every forward and wide option has a Betis player close by. The teammate to the left is marked, and turning into the defender on his back with no support ahead is a losing battle. Taking a touch to control and playing back is the safest way to keep possession and let Barcelona reset. Option A risks playing straight into pressure, option C looks available but the right center back is tracked, and option D the left back is being closely marked"
+  }
+  ,
+  {
+    "id": 4,
+    "clipUrl": "https://bravoball-quiz-clips.s3.us-east-2.amazonaws.com/midfield/pedri-barcaVbetis-4.mp4",
+    "pauseAt": 3.2,
+    "position": "Central Midfielder",
+    "difficulty": 2,
+    "question": "You're Pedri receiving in midfield with pressure from the right. What do you do?",
+    "options": [
+      { "id": "A", "text": "Play it back to where it came from — the center back" },
+      { "id": "B", "text": "Lay it wide right to the right back on the touchline" },
+      { "id": "C", "text": "Half turn into the space and play the ball forward" },
+      { "id": "D", "text": "Pass to the left center back to switch the build-up" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "The Betis #8 is positioned to cut off the left center back, so that switch is risky. The right back is already under pressure, so going wide right just moves the problem to a crowded side. Playing back to the center back is safe but low-value. The half turn lets Pedri face forward and attack the open channel before Betis can reorganize."
+  },
+  {
+    "id": 5,
+    "clipUrl": "https://bravoball-quiz-clips.s3.us-east-2.amazonaws.com/midfield/pedri-barcaVbetis-7.mp4",
+    "pauseAt": 3.35,
+    "position": "Central Midfielder",
+    "difficulty": 3,
+    "question": "You're Pedri. You receive from Yamal with a defender on your back and Rashford running in behind. What do you do?",
+    "options": [
+      { "id": "A", "text": "Take a touch and half turn to play out" },
+      { "id": "B", "text": "Play it first time back to Balde at left back" },
+      { "id": "C", "text": "Shoot first time at goal" },
+      { "id": "D", "text": "One-touch through ball into Rashford's run" }
+    ],
+    "correctAnswer": "D",
+    "explanation": "The defender is already closing from behind, so taking a touch invites contact before Pedri can do anything useful. Playing back to the left back is safe but kills the chance because Rashford's run is live right now. Shooting is tempting, but the angle is tight and the pressure is immediate. The one-touch through ball is the only option that uses the defender's momentum against him and finds Rashford before the line recovers."
+  }
+]
