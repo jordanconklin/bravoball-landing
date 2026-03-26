@@ -29,7 +29,6 @@ export const SignUpModal: React.FC<SignUpModalProps> = ({ isOpen, onClose, stand
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [submittedWithEmail, setSubmittedWithEmail] = useState(false);
   const [error, setError] = useState('');
 
   // Handle form submission
@@ -37,36 +36,35 @@ export const SignUpModal: React.FC<SignUpModalProps> = ({ isOpen, onClose, stand
     e.preventDefault();
     setIsSubmitting(true);
     setError('');
-    const normalizedEmail = email.trim();
 
     // Validate email format
-    if (normalizedEmail && !validateEmail(normalizedEmail)) {
+    if (!validateEmail(email)) {
       setError('Please enter a valid email address');
       setIsSubmitting(false);
       return;
     }
 
     try {
-      if (normalizedEmail) {
-        // Keep email signups unique when one is provided.
-        const { data: existingEmail } = await supabase
-          .from('waitlist')
-          .select('email')
-          .eq('email', normalizedEmail)
-          .maybeSingle();
+      // Check if email already exists
+      const { data: existingEmail } = await supabase
+        .from('waitlist')
+        .select('email')
+        .eq('email', email)
+        .single();
 
-        if (existingEmail) {
-          setError('This email is already on the waitlist!');
-          setIsSubmitting(false);
-          return;
-        }
+      // If email already exists, set error message
+      if (existingEmail) {
+        setError('This email is already on the waitlist!');
+        setIsSubmitting(false);
+        return;
       }
 
+      // Insert email into Supabase
       const { error: supabaseError } = await supabase
         .from('waitlist')
         .insert([
           { 
-            email: normalizedEmail || null,
+            email,
             signed_up_at: new Date().toISOString(),
             source: window.location.hostname
           }
@@ -76,7 +74,6 @@ export const SignUpModal: React.FC<SignUpModalProps> = ({ isOpen, onClose, stand
       if (supabaseError) throw supabaseError;
 
       // Set success state and clear email input
-      setSubmittedWithEmail(Boolean(normalizedEmail));
       setIsSuccess(true);
       setEmail('');
     } catch (err) {
@@ -94,12 +91,8 @@ export const SignUpModal: React.FC<SignUpModalProps> = ({ isOpen, onClose, stand
     <>
       {isSuccess ? (
         <SuccessContent>
-          <h2>{submittedWithEmail ? "🎉 You're on the list!" : 'Thanks for the feedback!'}</h2>
-          <p>
-            {submittedWithEmail
-              ? "We'll notify you as soon as BravoBall launches."
-              : 'We saved your interest. You can always come back and leave your email later for launch updates.'}
-          </p>
+          <h2>🎉 You're on the list!</h2>
+          <p>We'll notify you as soon as BravoBall launches.</p>
         </SuccessContent>
       ) : (
         <>
@@ -114,9 +107,10 @@ export const SignUpModal: React.FC<SignUpModalProps> = ({ isOpen, onClose, stand
           <form onSubmit={handleSubmit}>
             <Input
               type="email"
-              placeholder="Enter your email (optional)"
+              placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
             {error && <ErrorMessage>{error}</ErrorMessage>}
             <SubmitButton disabled={isSubmitting}>
