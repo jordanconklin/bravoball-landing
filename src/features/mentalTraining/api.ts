@@ -19,6 +19,7 @@ export async function submitQuizSession({
   answers,
 }: SubmitQuizSessionParams) {
   const sessionId = crypto.randomUUID();
+  const normalizedEmail = email.trim();
 
   const { error: sessionError } = await supabase
     .from('mental_quiz_sessions')
@@ -26,7 +27,7 @@ export async function submitQuizSession({
       {
         id: sessionId,
         name,
-        email,
+        email: normalizedEmail || null,
         score,
         total_questions: totalQuestions,
         rating,

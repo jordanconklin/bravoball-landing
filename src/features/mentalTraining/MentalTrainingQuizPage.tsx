@@ -24,6 +24,10 @@ const ratingLabels: Record<number, string> = {
   5: 'Need this now',
 };
 
+function isValidEmail(email: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
 function getPerformanceLabel(score: number, totalQuestions: number) {
   const ratio = totalQuestions === 0 ? 0 : score / totalQuestions;
   if (ratio >= 0.85) return 'Elite field scanner';
@@ -248,10 +252,17 @@ export default function MentalTrainingQuizPage() {
 
   const handleSubmitFeedback = async (event: React.FormEvent) => {
     event.preventDefault();
+    const normalizedEmail = feedback.email.trim();
 
-    if (!feedback.name.trim() || !feedback.email.trim() || feedback.rating < 1) {
+    if (!feedback.name.trim() || feedback.rating < 1) {
       setSubmitState('error');
-      setSubmitError('Name, email, and a rating are required.');
+      setSubmitError('Name and a rating are required.');
+      return;
+    }
+
+    if (normalizedEmail && !isValidEmail(normalizedEmail)) {
+      setSubmitState('error');
+      setSubmitError('Enter a valid email or leave it blank.');
       return;
     }
 
@@ -261,6 +272,7 @@ export default function MentalTrainingQuizPage() {
     try {
       await submitQuizSession({
         ...feedback,
+        email: normalizedEmail,
         score,
         totalQuestions: QUESTIONS.length,
         answers: orderedAnswers,
@@ -484,7 +496,7 @@ export default function MentalTrainingQuizPage() {
                     />
                   </Field>
                   <Field>
-                    <Label>Email</Label>
+                    <Label>Email (optional)</Label>
                     <Input
                       type="email"
                       value={feedback.email}
