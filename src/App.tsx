@@ -366,6 +366,11 @@ const DownloadButtons = styled.div`
   gap: 0.75rem;
   width: fit-content;
   margin: 0 auto;
+
+  > * {
+    width: 100%;
+    margin: 0;
+  }
 `;
 
 const NavLink = styled(Link)`
