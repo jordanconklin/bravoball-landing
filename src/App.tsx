@@ -107,7 +107,10 @@ function App() {
                 <HeroSection>
                   <div>
                     <MainHeading>Personalized drills. Any place, any equipment, on-demand!</MainHeading>
-                    <GetStartedButton as="a" href="https://apps.apple.com/us/app/bravoball/id6746950846" target="_blank" rel="noopener noreferrer">Download Now</GetStartedButton>
+                    <DownloadButtons>
+                      <GetStartedButton as="a" href="https://apps.apple.com/us/app/bravoball/id6746950846" target="_blank" rel="noopener noreferrer">Download for iOS</GetStartedButton>
+                      <GetStartedButton as="a" href="https://play.google.com/store/apps/details?id=com.bravoball.app.bravoball_flutter" target="_blank" rel="noopener noreferrer">Download for Android</GetStartedButton>
+                    </DownloadButtons>
                   </div>
                   <AnimationWrapper>
                     <RiveComponent />
@@ -141,7 +144,10 @@ function App() {
                     <img src="/bravo_head.png" alt="Bravo" />
                   </CTAImageWrapper>
                   <CTATitle>Ready to transform your game?</CTATitle>
-                  <GetStartedButton as="a" href="https://apps.apple.com/us/app/bravoball/id6746950846" target="_blank" rel="noopener noreferrer">Download Now</GetStartedButton>
+                  <DownloadButtons>
+                    <GetStartedButton as="a" href="https://apps.apple.com/us/app/bravoball/id6746950846" target="_blank" rel="noopener noreferrer">Download for iOS</GetStartedButton>
+                    <GetStartedButton as="a" href="https://play.google.com/store/apps/details?id=com.bravoball.app.bravoball_flutter" target="_blank" rel="noopener noreferrer">Download for Android</GetStartedButton>
+                  </DownloadButtons>
                 </CTASection>
               </>
             } />
@@ -351,6 +357,14 @@ const GetStartedButton = styled(Button)`
     font-size: 0.875rem;
     min-width: 120px;
   }
+`;
+
+const DownloadButtons = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
 `;
 
 const NavLink = styled(Link)`
