@@ -361,10 +361,11 @@ const GetStartedButton = styled(Button)`
 
 const DownloadButtons = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: stretch;
   gap: 0.75rem;
-  justify-content: center;
-  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
 `;
 
 const NavLink = styled(Link)`
