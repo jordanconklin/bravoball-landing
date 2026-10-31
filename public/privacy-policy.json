@@ -1,65 +1,72 @@
 {
-  "lastUpdated": "May 2025",
+  "lastUpdated": "October 31, 2026",
+  "operator": "Conklin Official LLC",
+  "contactEmail": "team@conklinofficial.com",
   "sections": [
     {
       "id": "introduction",
       "title": "1. Introduction",
-      "content": "BravoBall (the \"App\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our App."
+      "content": "BravoBall (the \"App\") is a soccer training app operated by Conklin Official LLC (\"we\", \"us\"). This Privacy Policy explains what information we collect, how we use it, who can see it, which service providers process it for us, and the choices you have. If you have questions, contact us at team@conklinofficial.com."
     },
     {
-      "id": "information-collection",
-      "title": "2. Information We Collect",
-      "content": "We collect information you provide directly to us, such as your name, email address, and soccer training preferences including your position, experience level, training goals, available equipment, and training schedule. We also collect usage data to improve your training experience and track your progress."
+      "id": "who-bravoball-is-for",
+      "title": "2. Who BravoBall Is For",
+      "content": "Players who are at least 13 years old can create a BravoBall account themselves. Children under 13 can use BravoBall only through the parental consent process described in section 3. Players under 18 should review this policy with a parent or guardian before signing up."
     },
     {
-      "id": "information-usage",
-      "title": "3. How We Use Your Information",
-      "content": "We use your information to: (a) create personalized training sessions; (b) track your progress and achievements; (c) save your training preferences and history; (d) communicate with you about your training; (e) improve our training programs; and (f) ensure the security of your account."
+      "id": "children-s-privacy",
+      "title": "3. Children's Privacy",
+      "content": "We do not knowingly collect personal information from children under 13 without verifiable parental consent. We ask a parent or guardian for that consent by email, using a method known as \"email plus\".\n\nAsking for consent: if a player tells us they are 12 or under, we ask for a parent or guardian's email address and the child's first name or nickname only. We collect these only to ask for consent. We then email the parent or guardian an explanation of what BravoBall collects and how we use it, a link to this Privacy Policy, and links to approve or decline. These links expire and work only once.\n\nBefore a parent approves: we hold only the parent's email, the child's first name or nickname, and the training answers the child gave during setup (such as position, age range and skill level), so the account is ready if the parent approves. The child can train on that device; their training activity stays on the device. We do not send analytics, show the child on leaderboards, allow friends, or allow joining a coach's team.\n\nIf a parent declines or does not respond: if the parent or guardian declines, or does not respond within 7 days, we delete the pending account along with the parent's email address and the child's name.\n\nWhen a parent approves: we record the time of approval and the IP address and browser information (user agent) used to approve, as our record of consent. We then send the parent or guardian a confirmation email; this confirmation is the \"plus\" in \"email plus\".\n\nAfter approval: the child's account stores the training preferences and progress needed to run the App. We do not send the child's personal information to analytics providers (product analytics stay off for child accounts), the child is hidden from the world leaderboard by default, and friends stay off. The child may join a coach's team; that coach can then see the information described in section 6.\n\nParental rights: a parent or guardian can revoke consent at any time using the link in the confirmation email, which deletes the child's account and associated data. A parent or guardian can also contact us at team@conklinofficial.com to review or delete their child's personal information or to refuse further collection or use of it.\n\nIf we learn that we have collected personal information from a child under 13 without verifiable parental consent, we will delete it."
     },
     {
-      "id": "information-sharing",
-      "title": "4. Sharing Your Information",
-      "content": "We do not sell your personal information. We may share your information with trusted third-party service providers who assist us in operating the App, as required by law, or to protect our rights. All third parties are required to protect your information and use it only for the purposes we specify."
+      "id": "information-we-collect",
+      "title": "4. Information We Collect",
+      "content": "Account information: your email address, a username, and a password (stored only in hashed form). If you sign in with Google or Apple, we receive your email address (or an Apple private relay address) and an account identifier from that provider. Apart from a child's first name or nickname during parental consent (section 3), the player app does not ask for your real name.\n\nParental consent (children under 13 only): a parent or guardian's email address, the child's first name or nickname, and our record of the parent's approval (time, IP address, and browser information). See section 3.\n\nTraining profile: the answers you give during setup, such as your age range, position, training experience, goals, strengths, areas to improve, available equipment, where you train, session length, training and game days, and how you heard about BravoBall.\n\nTraining activity: sessions and drills you complete, your training plan and calendar, streaks, points, saved drills, custom drills you create, and your chosen avatar. Videos you attach to custom drills stay on your device and are not uploaded.\n\nNotifications: your notification settings, time zone, and a push notification token for your device.\n\nUsage and device data: app events (for example, which screens you open and which sessions you finish), device model, operating system, app version, approximate location derived from your IP address, and crash and error reports.\n\nWe do not collect your phone number, contacts, photos, or precise location."
+    },
+    {
+      "id": "how-we-use-your-information",
+      "title": "5. How We Use Your Information",
+      "content": "We use your information to: (a) create your account and keep it secure; (b) build personalized training sessions and plans; (c) track your progress, streaks, and points; (d) send training reminders and account emails such as password resets; (e) show leaderboards, friends, and team features; and (f) understand how the App is used so we can fix bugs and improve it. We do not use your information for advertising, and the App does not show ads."
+    },
+    {
+      "id": "what-other-users-can-see",
+      "title": "6. What Other Users Can See",
+      "content": "World leaderboard: your username, avatar, points, and number of completed sessions can appear on the world leaderboard, which other BravoBall users can see. You can hide yourself from the world leaderboard at any time in Profile > Manage Account > Privacy. New accounts get a random username that is not based on your email.\n\nFriends: people you accept as friends can see your username, email address, avatar, points, rank, streaks, completed sessions, total training time, favorite drill, and when you last trained.\n\nCoaches and teams: if you join a team with a team code or link, or a coach adds you to their team, that coach can see your username, email address, avatar, streaks, completed sessions, training minutes, and the drills in the sessions you complete. To leave a team, ask your coach to remove you or contact us. If a coach deletes their account, their team is removed and its players are simply taken off the team; the players' own accounts and data are not affected.\n\nChildren under 13: child accounts are hidden from the world leaderboard by default and cannot use friends. A child may join a coach's team, and that coach sees the information described above.\n\nChoose a username that does not include your real name or other personal details. You can change it in Profile > Manage Account."
+    },
+    {
+      "id": "service-providers-we-use",
+      "title": "7. Service Providers We Use",
+      "content": "We do not sell or rent your personal information. We share it only with service providers that run parts of the App for us, under their terms, and only for that purpose:\n\n• Render: hosts our servers and database.\n• PostHog: product analytics and crash and error reporting.\n• Google Firebase: push notifications (Firebase Cloud Messaging) and sign-in with Google or Apple (Firebase Authentication).\n• Google Sign-In and Sign in with Apple: only if you choose to sign in with them.\n• SendGrid (Twilio): sends account emails such as password resets and parental consent emails.\n• Apple App Store and Google Play: distribute the App and show the optional rating prompt.\n\nWe may also disclose information if required by law or to protect the safety of our users."
     },
     {
       "id": "data-security",
-      "title": "5. Data Security",
-      "content": "We implement industry-standard security measures to protect your personal information and training data. This includes secure storage of your account credentials, encrypted data transmission, and regular security updates. Your training progress and preferences are stored securely on our servers."
+      "title": "8. Data Security",
+      "content": "We use encrypted connections (HTTPS) between the App and our servers, store passwords only in hashed form, and limit access to our systems. No method of storage or transmission is completely secure, so we cannot guarantee absolute security."
     },
     {
-      "id": "your-rights",
-      "title": "6. Your Rights",
-      "content": "You may access, update, or delete your personal information at any time by contacting us at team@conklinofficial.com. You may also request that we stop using your information for certain purposes."
+      "id": "data-retention-and-deleting-your-account",
+      "title": "9. Data Retention and Deleting Your Account",
+      "content": "We keep your information for as long as your account exists. You can delete your account at any time in the App under Profile > Manage Account > Delete Account. Deleting your account removes your profile, training history, friend connections, team memberships, and related data from our active systems; copies may remain in routine backups for a limited time before they are overwritten. You can also ask us to delete your account by emailing team@conklinofficial.com."
     },
     {
-      "id": "children-privacy",
-      "title": "7. Children's Privacy",
-      "content": "BravoBall is designed to be accessible to soccer players of all ages. For users under 13, we recommend parental supervision and guidance. Parents or guardians can contact us at team@conklinofficial.com to manage their child's account and data."
+      "id": "your-choices-and-rights",
+      "title": "10. Your Choices and Rights",
+      "content": "You can update your username, email address, password, avatar, and training preferences in the App, and turn notifications on or off in Profile settings or your device settings. You may also ask us to access, correct, or delete your personal information by emailing team@conklinofficial.com. A parent or guardian of a player under 18 may make these requests on the player's behalf."
     },
     {
-      "id": "policy-changes",
-      "title": "8. Changes to This Policy",
-      "content": "We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new policy in the App. Your continued use of the App after changes are posted constitutes your acceptance of those changes."
+      "id": "international-data-transfers",
+      "title": "11. International Data Transfers",
+      "content": "BravoBall and its service providers process information primarily in the United States. If you use BravoBall from another country, your information will be transferred to and processed in the United States."
+    },
+    {
+      "id": "changes-to-this-policy",
+      "title": "12. Changes to This Policy",
+      "content": "We may update this Privacy Policy from time to time. We will post the updated policy in the App and change the \"Last updated\" date. If we make material changes, we will tell you in the App before they take effect."
     },
     {
       "id": "contact-us",
-      "title": "9. Contact Us",
-      "content": "If you have any questions or concerns about this Privacy Policy, please contact us at team@conklinofficial.com."
-    },
-    {
-      "id": "data-retention",
-      "title": "10. Data Retention",
-      "content": "We retain your personal information for as long as necessary to provide our services and comply with legal obligations. You can request deletion of your data at any time."
-    },
-    {
-      "id": "international-transfers",
-      "title": "11. International Data Transfers",
-      "content": "Your information may be transferred to and processed in countries other than your country of residence. We ensure appropriate safeguards are in place to protect your data."
-    },
-    {
-      "id": "third-party-services",
-      "title": "12. Third-Party Services",
-      "content": "We use the following third-party services in our app:\n\n• Rive Runtime: For training animations and interactive elements\n• SwiftKeychainWrapper: For secure storage of your account information\n\nWe also use our own backend services to manage your training data, progress tracking, and personalized training sessions. All data is processed in accordance with our privacy standards and applicable laws."
+      "title": "13. Contact Us",
+      "content": "If you have any questions or requests about this Privacy Policy or your information, contact us at team@conklinofficial.com."
     }
   ]
-} 
+}

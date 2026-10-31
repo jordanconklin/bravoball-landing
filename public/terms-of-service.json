@@ -1,0 +1,97 @@
+{
+  "lastUpdated": "October 31, 2026",
+  "operator": "Conklin Official LLC",
+  "contactEmail": "team@conklinofficial.com",
+  "sections": [
+    {
+      "id": "acceptance-of-terms",
+      "title": "1. Acceptance of Terms",
+      "content": "These Terms of Service (\"Terms\") are an agreement between you and Conklin Official LLC (\"we\", \"us\"), which operates the BravoBall app (the \"App\"). By creating an account or using the App, you agree to these Terms and to our Privacy Policy. If you do not agree, do not use the App."
+    },
+    {
+      "id": "eligibility",
+      "title": "2. Eligibility",
+      "content": "You must be at least 13 years old to create an account on your own. A child under 13 may use the App only with a parent or guardian's verifiable consent, given through the process described in our Privacy Policy. Until the parent or guardian approves, the child can use the App only on that device, with limited features. A parent or guardian can revoke consent at any time, which deletes the child's account.\n\nIf you are under 18 (or the age of majority where you live), you may use the App only with the permission of a parent or legal guardian, and your parent or guardian agrees to these Terms on your behalf and is responsible for your use of the App."
+    },
+    {
+      "id": "your-account",
+      "title": "3. Your Account",
+      "content": "You are responsible for keeping your login details private and for activity on your account. Do not share your account or use someone else's."
+    },
+    {
+      "id": "community-rules",
+      "title": "4. Community Rules",
+      "content": "Other players can see your username, avatar, and training stats on the leaderboard, in friend lists, and on teams. When you use these features you agree not to:\n\n• pick a username or avatar that is offensive, hateful, sexual, or includes your real full name, phone number, address, school, or other contact details;\n• harass, bully, threaten, or spam other users, including through friend requests;\n• impersonate another person, coach, team, or BravoBall;\n• share anyone's personal contact information;\n• cheat or manipulate points, streaks, or the leaderboard.\n\nTo report abuse or a player who breaks these rules, email team@conklinofficial.com. We may change offending usernames and remove users from the leaderboard, friends, or teams."
+    },
+    {
+      "id": "coaches-and-teams",
+      "title": "5. Coaches and Teams",
+      "content": "Coaches may add to their team only players who have agreed to join, and may use the training information they see only to coach those players. Coaches must not use the App to collect players' personal information or to contact players outside their team role. A coach can see the training activity of players on their team only. If a coach deletes their account, their team is removed and its players are simply taken off the team; the players' accounts and training history are not affected."
+    },
+    {
+      "id": "your-content",
+      "title": "6. Your Content",
+      "content": "You keep ownership of your training data, custom drills, and other content you add. You give us a non-exclusive license to store and use it only to run and improve the App for you."
+    },
+    {
+      "id": "prohibited-conduct",
+      "title": "7. Prohibited Conduct",
+      "content": "You agree not to: (a) use the App for any unlawful purpose; (b) try to gain unauthorized access to any part of the App or other users' accounts; (c) interfere with or disrupt the App or its servers; (d) upload viruses or malicious code; or (e) scrape, copy, or resell the App or its content."
+    },
+    {
+      "id": "intellectual-property",
+      "title": "8. Intellectual Property",
+      "content": "All content, features, and functionality of the App (excluding your content) belong to Conklin Official LLC and its licensors. You may not copy, modify, or distribute any part of the App without our prior written consent."
+    },
+    {
+      "id": "deleting-your-account",
+      "title": "9. Deleting Your Account",
+      "content": "You can stop using the App at any time and delete your account in the App under Profile > Manage Account > Delete Account. Deletion is permanent; see the Privacy Policy for what is deleted. You can also ask us to delete your account by emailing team@conklinofficial.com."
+    },
+    {
+      "id": "suspension-and-termination-by-us",
+      "title": "10. Suspension and Termination by Us",
+      "content": "We may suspend or close an account that breaks these Terms or puts other users at risk. Where reasonable, we will tell you why."
+    },
+    {
+      "id": "purchases-and-refunds",
+      "title": "11. Purchases and Refunds",
+      "content": "If the App offers in-app purchases or subscriptions, they are sold through the Apple App Store or Google Play, renew as described at purchase, and can be cancelled in your store account settings. Refunds are handled by Apple or Google under their refund processes."
+    },
+    {
+      "id": "training-safety",
+      "title": "12. Training Safety",
+      "content": "Soccer training involves physical activity and risk of injury. You agree to: (a) check with a healthcare professional before starting a training program if you have any health concerns; (b) use proper equipment and a safe space; (c) stop training if you feel pain or discomfort; and (d) be responsible for your own safety. Players under 18 should train with appropriate adult supervision."
+    },
+    {
+      "id": "disclaimer-of-warranties",
+      "title": "13. Disclaimer of Warranties",
+      "content": "The App is provided \"as is\" and \"as available\". To the extent allowed by law, we make no warranties, express or implied, about the App's operation or availability, and we do not guarantee specific training results."
+    },
+    {
+      "id": "limitation-of-liability",
+      "title": "14. Limitation of Liability",
+      "content": "To the fullest extent permitted by law, Conklin Official LLC is not liable for indirect, incidental, special, or consequential damages arising from your use of the App. Nothing in these Terms limits liability that cannot be limited under applicable law."
+    },
+    {
+      "id": "dispute-resolution-and-arbitration",
+      "title": "15. Dispute Resolution and Arbitration",
+      "content": "Please contact us first at team@conklinofficial.com so we can try to resolve any dispute informally. If we cannot, any dispute will be resolved by binding individual arbitration under the rules of the American Arbitration Association, except that either party may bring an individual claim in small claims court if it qualifies.\n\nYou can opt out of this arbitration agreement by emailing team@conklinofficial.com within 30 days of first accepting these Terms, saying you want to opt out. Opting out does not affect any other part of these Terms.\n\nNothing in this section takes away rights that minors or their parents or guardians have under applicable law, including any right to disaffirm a contract."
+    },
+    {
+      "id": "governing-law",
+      "title": "16. Governing Law",
+      "content": "These Terms are governed by the laws of the United States and the State of California, without regard to conflict of law principles, except where the law of your place of residence requires otherwise."
+    },
+    {
+      "id": "changes-to-these-terms",
+      "title": "17. Changes to These Terms",
+      "content": "We may update these Terms from time to time. We will post the updated Terms in the App and change the \"Last updated\" date, and we will tell you in the App before material changes take effect. If you keep using the App after that, the updated Terms apply."
+    },
+    {
+      "id": "contact-us",
+      "title": "18. Contact Us",
+      "content": "Questions about these Terms? Contact us at team@conklinofficial.com."
+    }
+  ]
+}
