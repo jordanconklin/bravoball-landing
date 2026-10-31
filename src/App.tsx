@@ -9,6 +9,7 @@ import { BenefitCard } from './components/BenefitCard';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import ReleaseNotes from './components/ReleaseNotes';
 import DeleteAccountInfo from './components/DeleteAccountInfo';
+import TermsOfService from './components/TermsOfService';
 import MentalTrainingQuizPage from './features/mentalTraining/MentalTrainingQuizPage';
 
 type ButtonProps =
@@ -99,6 +100,7 @@ function App() {
           <Routes>
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsOfService />} />
             <Route path="/issues" element={<ReleaseNotes />} />
             <Route path="/delete-account-info" element={<DeleteAccountInfo />} />
             <Route path="/mental-training-demo" element={<MentalTrainingQuizPage />} />
@@ -155,6 +157,7 @@ function App() {
           <Footer>
             <FooterLinks>
               <FooterLink to="/privacy">Privacy Policy</FooterLink>
+              <FooterLink to="/terms">Terms of Service</FooterLink>
               <FooterLink to="/issues">Known Issues</FooterLink>
               <FooterLink to="/delete-account-info">Delete Account</FooterLink>
             </FooterLinks>

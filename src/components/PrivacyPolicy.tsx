@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 
-interface PrivacySection {
+interface LegalSection {
   id: string;
   title: string;
   content: string;
 }
 
-interface PrivacyPolicyDocument {
+interface LegalDocument {
   lastUpdated: string;
-  sections: PrivacySection[];
+  sections: LegalSection[];
+}
+
+interface LegalDocumentPageProps {
+  title: string;
+  source: string;
 }
 
 const Card = styled.div`
@@ -73,28 +78,31 @@ const ErrorWrapper = styled.div`
   flex-direction: column;
 `;
 
-const PrivacyPolicy: React.FC = () => {
-  const [privacyPolicy, setPrivacyPolicy] = useState<PrivacyPolicyDocument | null>(null);
+// Renders a legal document (privacy policy, terms) from a JSON file in /public.
+// The JSON mirrors the in-app copy in the bravoball app repo.
+export const LegalDocumentPage: React.FC<LegalDocumentPageProps> = ({ title, source }) => {
+  const [doc, setDoc] = useState<LegalDocument | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchPrivacyPolicy = async () => {
+    window.scrollTo(0, 0);
+    const fetchDocument = async () => {
       try {
-        const response = await fetch('/privacy-policy.json');
+        const response = await fetch(source);
         if (!response.ok) {
-          throw new Error('Failed to fetch privacy policy');
+          throw new Error(`Failed to fetch ${title}`);
         }
         const data = await response.json();
-        setPrivacyPolicy(data);
+        setDoc(data);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'An error occurred');
       } finally {
         setLoading(false);
       }
     };
-    fetchPrivacyPolicy();
-  }, []);
+    fetchDocument();
+  }, [source, title]);
 
   if (loading) {
     return (
@@ -107,21 +115,21 @@ const PrivacyPolicy: React.FC = () => {
   if (error) {
     return (
       <ErrorWrapper>
-        <div style={{ fontWeight: 700, fontSize: 20, marginBottom: 8 }}>Error Loading Privacy Policy</div>
+        <div style={{ fontWeight: 700, fontSize: 20, marginBottom: 8 }}>Error Loading {title}</div>
         <div>{error}</div>
       </ErrorWrapper>
     );
   }
 
-  if (!privacyPolicy) {
+  if (!doc) {
     return null;
   }
 
   return (
     <Card>
-      <Title>Privacy Policy</Title>
-      <LastUpdated>Last updated: {privacyPolicy.lastUpdated}</LastUpdated>
-      {privacyPolicy.sections.map((section) => (
+      <Title>{title}</Title>
+      <LastUpdated>Last updated: {doc.lastUpdated}</LastUpdated>
+      {doc.sections.map((section) => (
         <Section key={section.id}>
           <SectionTitle>{section.title}</SectionTitle>
           <SectionContent>{section.content}</SectionContent>
@@ -131,4 +139,9 @@ const PrivacyPolicy: React.FC = () => {
   );
 };
 
-export default PrivacyPolicy; 
+const PrivacyPolicy: React.FC = () => (
+  <LegalDocumentPage title="Privacy Policy" source="/privacy-policy.json" />
+);
+
+export default PrivacyPolicy;
+

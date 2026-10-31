@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 const Card = styled.div`
   background: #fff;
@@ -121,12 +122,12 @@ const DeleteAccountInfo: React.FC = () => {
     <Card>
       <Title>Delete Your BravoBall Account</Title>
       <Note>
-        To delete your account and all associated data, follow the steps below using the BravoBall app on your device.
+        You can delete your BravoBall account at any time, either in the app or by emailing us. BravoBall is operated by Conklin Official LLC.
       </Note>
 
       <Section>
-        <SectionTitle>How to Delete Your Account</SectionTitle>
-        
+        <SectionTitle>Option 1: Delete in the App</SectionTitle>
+
         <StepCard>
           <StepTitle>
             <StepNumber>1</StepNumber>
@@ -140,46 +141,49 @@ const DeleteAccountInfo: React.FC = () => {
         <StepCard>
           <StepTitle>
             <StepNumber>2</StepNumber>
-            Go to Profile Page
+            Go to Profile &gt; Manage Account
           </StepTitle>
           <StepDesc>
-            Navigate to the Profile section in the app.
+            Open the Profile tab, then tap "Manage Account".
           </StepDesc>
         </StepCard>
 
         <StepCard>
           <StepTitle>
             <StepNumber>3</StepNumber>
-            Access Account Settings
-          </StepTitle>
-          <StepDesc>
-            Tap on "Manage Account" to access your account settings.
-          </StepDesc>
-        </StepCard>
-
-        <StepCard>
-          <StepTitle>
-            <StepNumber>4</StepNumber>
             Delete Account
           </StepTitle>
           <StepDesc>
-            Find and tap the "Delete Account" button, then confirm your decision in the prompt.
+            Tap "Delete Account", then confirm your decision in the prompt. Deletion is permanent.
           </StepDesc>
         </StepCard>
+      </Section>
+
+      <Section>
+        <SectionTitle>Option 2: Ask Us by Email</SectionTitle>
+        <div style={{ color: '#666', fontSize: '1rem' }}>
+          If you can't access the app, email <strong>team@conklinofficial.com</strong> from the email address on your account and ask us to delete it. We may ask you to confirm the request before we delete the account.
+        </div>
+      </Section>
+
+      <Section>
+        <SectionTitle>Parents and Guardians</SectionTitle>
+        <div style={{ color: '#666', fontSize: '1rem' }}>
+          If you approved a BravoBall account for a child under 13, you can revoke consent at any time using the link in your confirmation email, which deletes the child's account and associated data. You can also email team@conklinofficial.com to review or delete your child's information. A parent or guardian of a player under 18 may also request deletion on the player's behalf.
+        </div>
       </Section>
 
       <Section>
         <SectionTitle>What Gets Deleted</SectionTitle>
         <WarningCard>
           <WarningTitle>⚠️ Permanent Deletion</WarningTitle>
-          <div>When you delete your account, the following data is permanently removed:</div>
+          <div>Deleting your account removes the following from our active systems:</div>
           <List>
-            <ListItem>Your email address and login information</ListItem>
-            <ListItem>All saved drills and custom training sessions</ListItem>
-            <ListItem>Complete training history and progress metrics</ListItem>
-            <ListItem>Session preferences and settings</ListItem>
-            <ListItem>Drill groups and saved filters</ListItem>
-            <ListItem>All authentication tokens and refresh tokens</ListItem>
+            <ListItem>Your profile and account information (email address, username, and login details)</ListItem>
+            <ListItem>Your training profile, training history, progress, streaks, and points</ListItem>
+            <ListItem>Your friend connections</ListItem>
+            <ListItem>Your team memberships</ListItem>
+            <ListItem>Related data such as saved and custom drills and notification settings</ListItem>
           </List>
         </WarningCard>
       </Section>
@@ -187,13 +191,13 @@ const DeleteAccountInfo: React.FC = () => {
       <Section>
         <SectionTitle>Data Retention</SectionTitle>
         <div style={{ color: '#666', fontSize: '1rem' }}>
-          We do not retain any personal data after account deletion. Some anonymized logs may be kept for up to 30 days for security and system maintenance purposes, but these logs contain no personally identifiable information.
+          We keep your information for as long as your account exists. After deletion, copies may remain in routine backups for a limited time before they are overwritten. See our <Link to="/privacy">Privacy Policy</Link> for details.
         </div>
       </Section>
 
       <ContactInfo>
         <div style={{ fontWeight: 600, marginBottom: '0.5rem' }}>Need Help?</div>
-        <div>If you have any questions about account deletion or need assistance, please contact our support team.</div>
+        <div>If you have any questions about account deletion or need assistance, contact us.</div>
         <div style={{ marginTop: '0.5rem', fontWeight: 500 }}>
           Email: team@conklinofficial.com
         </div>
