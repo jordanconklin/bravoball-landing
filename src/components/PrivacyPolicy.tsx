@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 interface LegalSection {
   id: string;
-  title: string;
+  title?: string;
   content: string;
+  // Optional link to another page on this site, shown after the content.
+  link?: { text: string; to: string };
 }
 
 interface LegalDocument {
@@ -60,6 +63,20 @@ const SectionContent = styled.div`
   line-height: 1.7;
   font-family: 'Poppins', sans-serif;
   white-space: pre-line;
+`;
+
+const SectionLink = styled(Link)`
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #F6C356;
+  font-weight: 600;
+  font-size: 1.08rem;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const LoadingWrapper = styled.div`
@@ -131,8 +148,9 @@ export const LegalDocumentPage: React.FC<LegalDocumentPageProps> = ({ title, sou
       <LastUpdated>Last updated: {doc.lastUpdated}</LastUpdated>
       {doc.sections.map((section) => (
         <Section key={section.id}>
-          <SectionTitle>{section.title}</SectionTitle>
+          {section.title && <SectionTitle>{section.title}</SectionTitle>}
           <SectionContent>{section.content}</SectionContent>
+          {section.link && <SectionLink to={section.link.to}>{section.link.text}</SectionLink>}
         </Section>
       ))}
     </Card>
