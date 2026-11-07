@@ -1,0 +1,36 @@
+{
+  "lastUpdated": "November 7, 2026",
+  "operator": "Conklin Official LLC",
+  "contactEmail": "team@conklinofficial.com",
+  "sections": [
+    {
+      "id": "intro",
+      "content": "Players 12 and under can use BravoBall only with a parent's or guardian's permission."
+    },
+    {
+      "id": "what-we-collect",
+      "title": "What we collect",
+      "content": "The parent's email address and the child's first name or nickname, only to ask for permission; once approved, the child's training answers (position, age range, skill level, goals, equipment, schedule) and training activity (sessions, drills, streaks, progress)."
+    },
+    {
+      "id": "how-we-use-it",
+      "title": "How we use it",
+      "content": "Only to provide personalized soccer training. We don't send a child's information to analytics or advertising companies. Children are hidden from the public leaderboard by default, friend features are off, and they can join a coach's team."
+    },
+    {
+      "id": "if-a-parent-doesnt-approve",
+      "title": "If a parent doesn't approve",
+      "content": "If they decline or don't respond within 7 days, we delete the account, the parent's email and the child's name."
+    },
+    {
+      "id": "parents-rights",
+      "title": "Parents' rights",
+      "content": "You can revoke permission and delete your child's account at any time with the link in your confirmation email, or email team@conklinofficial.com to review or delete your child's information or to refuse further collection."
+    },
+    {
+      "id": "full-privacy-policy",
+      "content": "The full privacy policy is also in the BravoBall app under Profile → Privacy Policy.",
+      "link": { "text": "Read the full Privacy Policy", "to": "/privacy" }
+    }
+  ]
+}

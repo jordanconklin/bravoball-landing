@@ -10,6 +10,7 @@ import PrivacyPolicy from './components/PrivacyPolicy';
 import ReleaseNotes from './components/ReleaseNotes';
 import DeleteAccountInfo from './components/DeleteAccountInfo';
 import TermsOfService from './components/TermsOfService';
+import ChildrenPrivacyNotice from './components/ChildrenPrivacyNotice';
 import MentalTrainingQuizPage from './features/mentalTraining/MentalTrainingQuizPage';
 
 type ButtonProps =
@@ -100,6 +101,7 @@ function App() {
           <Routes>
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/privacy/children" element={<ChildrenPrivacyNotice />} />
             <Route path="/terms" element={<TermsOfService />} />
             <Route path="/issues" element={<ReleaseNotes />} />
             <Route path="/delete-account-info" element={<DeleteAccountInfo />} />
@@ -157,6 +159,7 @@ function App() {
           <Footer>
             <FooterLinks>
               <FooterLink to="/privacy">Privacy Policy</FooterLink>
+              <FooterLink to="/privacy/children">Children's Privacy</FooterLink>
               <FooterLink to="/terms">Terms of Service</FooterLink>
               <FooterLink to="/issues">Known Issues</FooterLink>
               <FooterLink to="/delete-account-info">Delete Account</FooterLink>
