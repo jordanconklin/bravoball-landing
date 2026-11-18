@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "October 31, 2026",
+  "lastUpdated": "November 17, 2026",
   "operator": "Conklin Official LLC",
   "contactEmail": "team@conklinofficial.com",
   "sections": [
@@ -30,7 +30,7 @@
     {
       "id": "how-we-use-your-information",
       "title": "5. How We Use Your Information",
-      "content": "We use your information to: (a) create your account and keep it secure; (b) build personalized training sessions and plans; (c) track your progress, streaks, and points; (d) send training reminders and account emails such as password resets; (e) show leaderboards, friends, and team features; and (f) understand how the App is used so we can fix bugs and improve it. We do not use your information for advertising, and the App does not show ads."
+      "content": "We use your information to: (a) create your account and keep it secure; (b) build personalized training sessions and plans; (c) track your progress, streaks, and points; (d) send training reminders and account emails such as password resets; (e) show leaderboards, friends, and team features; (f) understand how the App is used so we can fix bugs and improve it; and (g) occasionally email you to ask for feedback about the App. We do not send these emails to child accounts, and you can reply at any time to stop them. We do not use your information for advertising, and the App does not show ads."
     },
     {
       "id": "what-other-users-can-see",
@@ -40,7 +40,7 @@
     {
       "id": "service-providers-we-use",
       "title": "7. Service Providers We Use",
-      "content": "We do not sell or rent your personal information. We share it only with service providers that run parts of the App for us, under their terms, and only for that purpose:\n\n• Render: hosts our servers and database.\n• PostHog: product analytics and crash and error reporting.\n• Google Firebase: push notifications (Firebase Cloud Messaging) and sign-in with Google or Apple (Firebase Authentication).\n• Google Sign-In and Sign in with Apple: only if you choose to sign in with them.\n• SendGrid (Twilio): sends account emails such as password resets and parental consent emails.\n• Apple App Store and Google Play: distribute the App and show the optional rating prompt.\n\nWe may also disclose information if required by law or to protect the safety of our users."
+      "content": "We do not sell or rent your personal information. We share it only with service providers that run parts of the App for us, under their terms, and only for that purpose:\n\n• Render: hosts our servers and database.\n• PostHog: product analytics and crash and error reporting.\n• Google Firebase: push notifications (Firebase Cloud Messaging) and sign-in with Google or Apple (Firebase Authentication).\n• Google Sign-In and Sign in with Apple: only if you choose to sign in with them.\n• Resend: sends account emails such as password resets and parental consent emails, and occasional feedback emails.\n• Apple App Store and Google Play: distribute the App and show the optional rating prompt.\n\nWe may also disclose information if required by law or to protect the safety of our users."
     },
     {
       "id": "data-security",
